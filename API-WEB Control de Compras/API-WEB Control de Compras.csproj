@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>API_WEB_Control_de_Compras</RootNamespace>
+  </PropertyGroup>
+
+
+</Project>
