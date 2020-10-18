@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { DashboardJefeComponent } from './Components/dashboard-jefe/dashboard-jefe.component';
 import { DashboardCompradorComponent } from './Components/dashboard-comprador/dashboard-comprador.component';
 import { DashboardFinancieroComponent } from './Components/dashboard-financiero/dashboard-financiero.component';
+import { CreacionUsuarioComponent } from './Components/creacion-usuario/creacion-usuario.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardJefeComponent,
     DashboardCompradorComponent,
-    DashboardFinancieroComponent
+    DashboardFinancieroComponent,
+    CreacionUsuarioComponent
   ],
   imports: [
     BrowserModule,
