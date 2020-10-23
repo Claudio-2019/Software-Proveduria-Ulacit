@@ -1,0 +1,20 @@
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.exe
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.deps.json
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.runtimeconfig.json
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.runtimeconfig.dev.json
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csprojAssemblyReference.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfoInputs.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfo.cs
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.RazorTargetAssemblyInfo.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\staticwebassets\API-WEB Control de Compras.StaticWebAssets.Manifest.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\staticwebassets\API-WEB Control de Compras.StaticWebAssets.xml
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.genruntimeconfig.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CoreCompileInputs.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.MvcApplicationPartsAssemblyInfo.cache
