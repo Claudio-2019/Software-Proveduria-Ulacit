@@ -18,3 +18,33 @@ C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ul
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.genruntimeconfig.cache
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CoreCompileInputs.cache
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.MvcApplicationPartsAssemblyInfo.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfoInputs.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfo.cs
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CoreCompileInputs.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.MvcApplicationPartsAssemblyInfo.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\appsettings.json
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.exe
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.deps.json
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.runtimeconfig.json
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.runtimeconfig.dev.json
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.RazorTargetAssemblyInfo.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CopyComplete
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\staticwebassets\API-WEB Control de Compras.StaticWebAssets.Manifest.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\staticwebassets\API-WEB Control de Compras.StaticWebAssets.xml
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.genruntimeconfig.cache
+D:\PROYECTOS EN ANGULAR\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csprojAssemblyReference.cache

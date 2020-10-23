@@ -1,25 +1,30 @@
-<router-outlet></router-outlet>
-<div class="limiter">
+<div class="limiter" *ngIf="HideLogin">
     <div class="container-login100">
         <div class="wrap-login100 p-t-85 p-b-20">
 
-            <form class="form-login" method="post">
+            <form class="form-login" [formGroup]="FormularioLogin" (ngSubmit)="CheckAuth()">
                 <fieldset>
                     <div class="wrap-input100 validate-input m-t-85 m-b-35">
                         <span class="input100">
-                            <input type="text" class="input100" name="username" placeholder="Correo">
+                            <input type="text" class="input100" name="username" placeholder="Correo"
+                                formControlName="GetUserName">
                             <i class="fa fa-user"></i> </span>
                     </div>
+                    <br>
+                    <br>
+                    <br>
                     <div class="wrap-input100 validate-input m-t-85 m-b-35">
                         <span class="input100">
-                            <input type="password" class="input100" name="password" placeholder="contraseña">
+                            <input type="password" class="input100" name="password" placeholder="contraseña"
+                                formControlName="GetPassword">
                             <i class="fa fa-lock"></i>
                         </span>
                     </div>
-
+                    <br>
+                    <br>
                     <div class="container-login100-form-btn">
-                        <button type="button" class="login100-form-btn" routerLink="/DashboardComprador">
-                            Iniciar sesion  <i class="fa fa-arrow-circle-right"></i>
+                        <button type="submit" class="login100-form-btn" [disabled]="FormularioLogin.invalid">
+                            Iniciar sesion <i class="fa fa-arrow-circle-right"></i>
                         </button>
                     </div>
                     <li class="m-b-8">
@@ -33,7 +38,9 @@
                         </a>
                     </li>
                 </fieldset>
+
             </form>
         </div>
     </div>
 </div>
+<router-outlet></router-outlet>

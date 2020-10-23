@@ -36,6 +36,12 @@ namespace API_WEB_Control_de_Compras
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseCors(builder =>
+            {
+                builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
+
+            });
+
             app.UseHttpsRedirection();
 
             app.UseRouting();

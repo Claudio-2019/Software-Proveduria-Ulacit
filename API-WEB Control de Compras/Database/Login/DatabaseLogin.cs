@@ -14,9 +14,9 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.Login
 
         public DatabaseLogin()
         {
-            cliente = new MongoClient("mongodb+srv://cgonzalezh333:Sangabriel8468B9@usernamesdb.8qftc.gcp.mongodb.net/UsernamesDB?retryWrites=true&w=majority");
+            cliente = new MongoClient("mongodb+srv://AdminCompras:Ah4CjDYDA55gONr5@usernamesdb.8qftc.gcp.mongodb.net/UsernamesDB?retryWrites=true&w=majority");
 
-            database = cliente.GetDatabase("InventarioMBS");
+            database = cliente.GetDatabase("ComprasAprobaciones");
         }
     }
 }
