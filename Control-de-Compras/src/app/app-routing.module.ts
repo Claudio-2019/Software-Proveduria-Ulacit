@@ -4,12 +4,16 @@ import { DasboardCompradorComponent } from "./Components/dasboard-comprador/dasb
 import { AuthGuardGuard } from "src/app/Guard/auth-guard.guard";
 import { DashboardFinancieroComponent } from './Components/dashboard-financiero/dashboard-financiero.component';
 import { DashboardJefeComponent } from './Components/dashboard-jefe/dashboard-jefe.component';
+import { SolicitudesCompradorComponent } from './Components/solicitudes-comprador/solicitudes-comprador.component';
+import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
 
 const routes: Routes = [
 
   {path: 'DashboardComprador',component:DasboardCompradorComponent,canActivate:[AuthGuardGuard]},
   {path: 'DashboardFinanciero',component:DashboardFinancieroComponent,canActivate:[AuthGuardGuard]},
   {path: 'DashboardJefe',component:DashboardJefeComponent,canActivate:[AuthGuardGuard]},
+  {path: 'SolicitudCompras',component:SolicitudesCompradorComponent,canActivate:[AuthGuardGuard]},
+  {path: 'Solicitud-Jefe',component:SolicitudesJefeComponent,canActivate:[AuthGuardGuard]},
   { path: '**',   redirectTo: '/' }
 
 ];

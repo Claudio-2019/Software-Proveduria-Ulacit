@@ -4789,23 +4789,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Soporte TI MBS\\.nuget\\packages\\": {},
+    "C:\\Users\\ClaudioPC\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\PROYECTOS EN ANGULAR\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
+      "projectUniqueName": "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
       "projectName": "API-WEB Control de Compras",
-      "projectPath": "D:\\PROYECTOS EN ANGULAR\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
-      "packagesPath": "C:\\Users\\Soporte TI MBS\\.nuget\\packages\\",
-      "outputPath": "D:\\PROYECTOS EN ANGULAR\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\obj\\",
+      "projectPath": "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
+      "packagesPath": "C:\\Users\\ClaudioPC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\Soporte TI MBS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ClaudioPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4853,7 +4853,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
