@@ -11,7 +11,7 @@ namespace API_Inventario.DatabaseContext.Login
 {
     public class LoginCollection : ILoginAuth
     {
-        internal DatabaseLogin repositorio = new DatabaseLogin();
+        internal DatabaseConfig repositorio = new DatabaseConfig();
 
         private IMongoCollection<LoginModel> Collection;
 

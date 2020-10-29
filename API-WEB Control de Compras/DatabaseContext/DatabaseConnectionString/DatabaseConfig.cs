@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace API_WEB_Control_de_Compras.DatabaseContext.Login
 {
-    public class DatabaseLogin
+    public class DatabaseConfig
     {
         public MongoClient cliente;
 
         public IMongoDatabase database;
 
-        public DatabaseLogin()
+        public DatabaseConfig()
         {
             cliente = new MongoClient("mongodb+srv://AdminCompras:Ah4CjDYDA55gONr5@usernamesdb.8qftc.gcp.mongodb.net/UsernamesDB?retryWrites=true&w=majority");
 
