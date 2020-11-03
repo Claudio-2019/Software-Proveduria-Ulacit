@@ -8,11 +8,6 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.AprobacionPorFinanciero
 {
     interface IAprobacionPorFinanciero
     {
-
-namespace API_WEB_Control_de_Compras.DatabaseContext.Notificaciones
-    {
-        interface INotificaciones
-        {
             Task InsertarAprobacionPorFinanciero(AprobacionPorFinancieroModel aprobacion);
             Task UpdateAprobacionPorFinanciero(AprobacionPorFinancieroModel aprobacion);
             Task DeleteAprobacionPorFinanciero(string id);
