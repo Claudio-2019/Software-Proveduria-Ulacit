@@ -4,12 +4,13 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
 {
-    public class CreacionLoginCollection
+    public class CreacionLoginCollection : ICreacionLogin
     {
 
         internal DatabaseConfig repositorio = new DatabaseConfig();
@@ -37,14 +38,14 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
             await Collection.InsertOneAsync(login);
         }
 
-        public async Task UpdateNotificacion(LoginModel login)
+        public async Task UpdateLogin(LoginModel login)
         {
             var FiltroId = Builders<LoginModel>.Filter.Eq(dato => dato._id, login._id);
 
             await Collection.ReplaceOneAsync(FiltroId, login);
         }
 
-        public async Task DeleteNotificacion(string id)
+        public async Task DeleteLogin(string id)
         {
             var FiltroConsulta = Builders<LoginModel>.Filter.Eq(s => s._id, new ObjectId(id));
 

@@ -4,12 +4,13 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace API_WEB_Control_de_Compras.DatabaseContext.AprobacionPorFinanciero
 {
-    public class AprobacionPorFinancieroCollection
+    public class AprobacionPorFinancieroCollection : IAprobacionPorFinanciero
     {
             internal DatabaseConfig repositorio = new DatabaseConfig();
 
