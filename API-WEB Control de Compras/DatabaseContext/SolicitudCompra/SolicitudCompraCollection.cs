@@ -10,14 +10,14 @@ using System.Threading.Tasks;
 
 namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudCompra
 {
-    public class SolicitudCompraCollection : ISolicitudCompraCollection
+    public class SolicitudCompraCollection : ISolicitudCompra
     {
         internal DatabaseConfig repositorio = new DatabaseConfig();
 
         private IMongoCollection<SolicitudCompraModel> Collection;
 
 
-        public SolicutdCompraCollection()
+        public SolicitudCompraCollection()
         {
             Collection = repositorio.database.GetCollection<SolicitudCompraModel>("SolicitudCompra");
 

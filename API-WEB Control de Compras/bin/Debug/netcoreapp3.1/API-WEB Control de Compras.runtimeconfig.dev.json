@@ -1,9 +1,0 @@
-{
-  "runtimeOptions": {
-    "additionalProbingPaths": [
-      "C:\\Users\\ClaudioPC\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\ClaudioPC\\.nuget\\packages",
-      "C:\\Microsoft\\Xamarin\\NuGet"
-    ]
-  }
-}
