@@ -51,7 +51,7 @@ export class AppComponent {
         if (this.TestBolean === true) {
           localStorage.setItem('status', JSON.stringify(this.TestBolean));
           alert("Inicio correcto!");
-          this.ruteo.navigate(['/DashboardComprador']);
+          this.ruteo.navigate(['/Dashboard-Principal']);
           this.ShowAlertAuth = false;
          this.HideLogin= false;
           return true;

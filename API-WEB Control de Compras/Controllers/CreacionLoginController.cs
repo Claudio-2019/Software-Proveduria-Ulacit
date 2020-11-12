@@ -32,15 +32,15 @@ namespace API_WEB_Control_de_Compras.Controllers
         //post para agregar
         [HttpPost]
         [Route("api/creacionLogin/InsertarLogin")]
-        public async Task<IActionResult> InsertarLogin([FromBody] LoginModel login)
+        public async Task<IActionResult> InsertarLogin([FromBody] CreacionLoginModel NewUser)
         {
-            if (login == null)
+            if (NewUser == null)
             {
                 return BadRequest();
             }
             else
             {
-                await database.InsertarLogin(login);
+                await database.InsertarLogin(NewUser);
 
             }
             return Created("Login Insertado!!", true);
@@ -49,7 +49,7 @@ namespace API_WEB_Control_de_Compras.Controllers
         //put para hacer update a login
         [HttpPut]
         [Route("api/creacionLogin/UpdateLogin/{id}")]
-        public async Task<IActionResult> UpdateLogin([FromBody] LoginModel login, string id)
+        public async Task<IActionResult> UpdateLogin([FromBody] CreacionLoginModel login, string id)
         {
             if (login == null)
             {

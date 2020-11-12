@@ -4,20 +4,19 @@ using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudCompra
+namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras
 {
-    public class SolicitudCompraCollection : ISolicitudCompra
+    public class SolicitudCompra : ISolicitudCompra
     {
         internal DatabaseConfig repositorio = new DatabaseConfig();
 
         private IMongoCollection<SolicitudCompraModel> Collection;
 
 
-        public SolicitudCompraCollection()
+        public SolicitudCompra()
         {
             Collection = repositorio.database.GetCollection<SolicitudCompraModel>("SolicitudCompra");
 

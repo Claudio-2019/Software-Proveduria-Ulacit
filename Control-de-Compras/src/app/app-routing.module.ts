@@ -6,6 +6,7 @@ import { DashboardFinancieroComponent } from './Components/dashboard-financiero/
 import { DashboardJefeComponent } from './Components/dashboard-jefe/dashboard-jefe.component';
 import { SolicitudesCompradorComponent } from './Components/solicitudes-comprador/solicitudes-comprador.component';
 import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
+import { DashboardPrincipalComponent } from './Components/dashboard-principal/dashboard-principal.component';
 
 const routes: Routes = [
 
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'DashboardJefe',component:DashboardJefeComponent,canActivate:[AuthGuardGuard]},
   {path: 'SolicitudCompras',component:SolicitudesCompradorComponent,canActivate:[AuthGuardGuard]},
   {path: 'Solicitud-Jefe',component:SolicitudesJefeComponent,canActivate:[AuthGuardGuard]},
+  {path: 'Dashboard-Principal',component:DashboardPrincipalComponent,canActivate:[AuthGuardGuard]},
   { path: '**',   redirectTo: '/' }
 
 ];

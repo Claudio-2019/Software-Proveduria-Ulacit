@@ -8,11 +8,11 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
 {
     interface ICreacionLogin
     {
-        Task InsertarLogin(LoginModel login);
-        Task UpdateLogin(LoginModel login);
+        Task InsertarLogin(CreacionLoginModel login);
+        Task UpdateLogin(CreacionLoginModel login);
         Task DeleteLogin(string id);
-        Task<LoginModel> getLoginWithId(string id);
-        Task<List<LoginModel>> getAllLogin();
+        Task<CreacionLoginModel> getLoginWithId(string id);
+        Task<List<CreacionLoginModel>> getAllLogin();
 
     }
 }
