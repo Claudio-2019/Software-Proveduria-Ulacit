@@ -10,15 +10,18 @@ import { DashboardJefeComponent } from './Components/dashboard-jefe/dashboard-je
 import { SolicitudesCompradorComponent } from './Components/solicitudes-comprador/solicitudes-comprador.component';
 import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
 import { DashboardPrincipalComponent } from './Components/dashboard-principal/dashboard-principal.component';
+import { CrearSolicitudComponent } from './Components/crear-solicitud/crear-solicitud.component';
 
 const routes: Routes = [
 
   {path: 'DashboardComprador',component:DasboardCompradorComponent,canActivate:[AuthGuardGuard]},
-  {path: 'DashboardFinanciero',component:DashboardFinancieroComponent,canActivate:[FinancieroGuardGuard]},
   {path: 'DashboardJefe',component:DashboardJefeComponent,canActivate:[AuthGuardGuard]},
-  {path: 'SolicitudCompras',component:SolicitudesCompradorComponent,canActivate:[CompradorGuardGuard]},
-  {path: 'Solicitud-Jefe',component:SolicitudesJefeComponent,canActivate:[JefeGuardGuard]},
   {path: 'Dashboard-Principal',component:DashboardPrincipalComponent,canActivate:[AuthGuardGuard]},
+  {path: 'SolicitudCompras',component:SolicitudesCompradorComponent,canActivate:[AuthGuardGuard]},
+  {path: 'Crear-Compra',component:CrearSolicitudComponent,canActivate:[AuthGuardGuard]},
+  {path: 'DashboardFinanciero',component:DashboardFinancieroComponent,canActivate:[AuthGuardGuard]},
+  {path: 'Solicitud-Jefe',component:SolicitudesJefeComponent,canActivate:[AuthGuardGuard]},
+ 
   { path: '**',   redirectTo: '/' }
 
 ];

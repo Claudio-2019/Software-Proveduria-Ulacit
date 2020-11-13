@@ -18,7 +18,7 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras
 
         public SolicitudCompra()
         {
-            Collection = repositorio.database.GetCollection<SolicitudCompraModel>("SolicitudCompra");
+            Collection = repositorio.database.GetCollection<SolicitudCompraModel>("SolicitudDeCompras");
 
         }
 

@@ -14,6 +14,7 @@ namespace API_WEB_Control_de_Compras.Models
         public string descripcion { get; set; }
         public int cantidad { get; set; }
         public int monto { get; set; }
+        public double total { get; set; }
         public string correoElectronico { get; set; }
         public int telefono { get; set; }
         public string nombreArticulo { get; set; }

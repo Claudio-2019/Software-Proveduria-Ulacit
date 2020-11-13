@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CompradorLoginModel } from 'src/app/Models/CompradorLogin';
 import { LoginModel } from 'src/app/Models/Login';
 import { LoginServiceService } from 'src/app/Services/Login/login-service.service';
 
@@ -51,7 +50,6 @@ export class DashboardPrincipalComponent implements OnInit {
         Password: this.FormularioComprador.get('GetPasswordComprador').value,
       };
 
-
       this.ServicesLogin.AuthenticateComprador(Comprador).subscribe(result => {
 
         this.TestBolean = result
@@ -73,7 +71,6 @@ export class DashboardPrincipalComponent implements OnInit {
 
       });
 
-
     }
    
   }
@@ -86,7 +83,6 @@ export class DashboardPrincipalComponent implements OnInit {
         Username: this.FormularioJefe.get('GetUserNameJefe').value,
         Password: this.FormularioJefe.get('GetPasswordJefe').value,
       };
-
 
       this.ServicesLogin.AuthenticateJefe(NewLogin).subscribe(result => {
 
@@ -109,9 +105,7 @@ export class DashboardPrincipalComponent implements OnInit {
 
       });
 
-
     }
-  
 
   }
   async CheckAuthFinanciero() {
@@ -123,7 +117,6 @@ export class DashboardPrincipalComponent implements OnInit {
         Username: this.FormularioFinanciero.get('GetUserNameFinanciero').value,
         Password: this.FormularioFinanciero.get('GetPasswordFinanciero').value,
       };
-
 
       this.ServicesLogin.AuthenticateFinanciero(NewLogin).subscribe(result => {
 
