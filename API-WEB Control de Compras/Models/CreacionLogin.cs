@@ -9,12 +9,20 @@ namespace API_WEB_Control_de_Compras.Models
 {
     public class CreacionLoginModel
     {
-        public ObjectId _id { get; set; }
+        [BsonId]
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string _id { get; set; }
+        [BsonElement]
         public string nombre { get; set; }
+        [BsonElement]
         public string apellidos { get; set; }
+        [BsonElement]
         public string correoElectronico { get; set; }
+        [BsonElement]
         public string contraseña { get; set; }
+        [BsonElement]
         public string tipoUsuario { get; set; }
+        [BsonElement]
         public string nombreJefe { get; set; }
 
     }

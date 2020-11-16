@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { LoginModel } from 'src/app/Models/Login';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { catchError } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -24,8 +25,8 @@ export class LoginServiceService {
 
     this.statusLogin = this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthentication,SendCredentials);
 
-    return this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthentication,SendCredentials);
-
+    return this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthentication,SendCredentials)
+    
     
   }
   AuthenticateJefe(SendCredentials:LoginModel):Observable<LoginModel>{
@@ -53,7 +54,7 @@ export class LoginServiceService {
 
   }
 
-  IsLogguedIn(){
+  IsLogguedInAdminisitrador(){
 
     return this.statusLogin;
   }
@@ -71,5 +72,11 @@ export class LoginServiceService {
   IsLogguedInFinanciero(){
 
     return this.statusFinanciero;
+  }
+
+  handleError(error:HttpErrorResponse){
+
+    return console.log(throwError(error));
+    
   }
 }

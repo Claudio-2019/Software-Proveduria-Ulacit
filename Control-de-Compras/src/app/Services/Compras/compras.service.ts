@@ -21,7 +21,7 @@ export class ComprasService {
 
   ComprasActuales(){
 
-    return this.httpRequest.get<ComprasModel[]>(this.ServerAPI+this.GetCompras)
+    return this.httpRequest.get<ComprasModel[]>(this.ServerAPI+this.GetCompras);
 
   }
 }

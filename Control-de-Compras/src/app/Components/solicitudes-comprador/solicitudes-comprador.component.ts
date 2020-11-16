@@ -23,6 +23,9 @@ export class SolicitudesCompradorComponent implements OnInit {
     })
 
   }
+  SelectRow(seleccion:any){
+    alert("Orden de compra: "+ seleccion._id+"\n"+"Articulo: "+seleccion.nombreArticulo);
+  }
 
   ngOnInit() {
 

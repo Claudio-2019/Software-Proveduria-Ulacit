@@ -60,9 +60,11 @@
                         <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                             <thead>
                                 <tr>
+                                    <th>Id</th>
                                     <th>Titulo</th>
                                     <th>Cantidad</th>
                                     <th>Monto</th>
+                                    <th>Total</th>
                                     <th>Telefono</th>
                                     <th>Nombre de Articulo</th>
                                     <th>Tipo Articulo</th>
@@ -74,14 +76,17 @@
                             <tbody *ngFor="let datos of listaSolicitudes">
 
                                 <tr>
+                                   
                                     <td>{{datos.titulo}}</td>
                                     <td>{{datos.cantidad}}</td>
                                     <td>{{datos.monto | currency}}</td>
+                                    <td>{{datos.total | currency}}</td>
                                     <td>{{datos.telefono}}</td>
                                     <td>{{datos.nombreArticulo}}</td>
                                     <td>{{datos.tipoArticulo}}</td>
                                     <td>{{datos.descripcion}}</td>
                                     <td>{{datos.correoElectronico}}</td>
+                                  
                                 </tr>
 
                             </tbody>

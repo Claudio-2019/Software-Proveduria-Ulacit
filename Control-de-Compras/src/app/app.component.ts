@@ -47,9 +47,9 @@ export class AppComponent {
 
         this.TestBolean = result
         console.log(this.TestBolean)
-
+        alert(result);
         if (this.TestBolean === true) {
-          localStorage.setItem('status', JSON.stringify(this.TestBolean));
+          localStorage.setItem('status', JSON.stringify(result));
           alert("Inicio correcto!");
           this.ruteo.navigate(['/Dashboard-Principal']);
           this.ShowAlertAuth = false;

@@ -148,9 +148,14 @@
                             <button class="btn btn--radius-2 btn--blue" type="submit" [disabled]="FormularioCompras.invalid">Solicitar Compra</button>
                            
                         </div>
+                        <div class="alert alert-success" role="alert" *ngIf="StatusEmail">
+                            Solicitud de compra creada!!!
+                          </div>
                     </form>
 
                    <a class="btn btn-warning" routerLink="/SolicitudCompras">Regresar al Dashboard</a>
+                   <br>
+                  
                 </div>
             </div>
         </div>

@@ -76,7 +76,6 @@ C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ul
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
-C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csprojAssemblyReference.cache
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfoInputs.cache
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfo.cs
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CoreCompileInputs.cache
@@ -88,3 +87,4 @@ C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ul
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.genruntimeconfig.cache
+C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csprojAssemblyReference.cache

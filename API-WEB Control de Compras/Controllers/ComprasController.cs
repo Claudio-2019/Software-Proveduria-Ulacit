@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using API_WEB_Control_de_Compras.DatabaseContext.Notificaciones;
 using API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras;
 using API_WEB_Control_de_Compras.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -11,6 +12,7 @@ namespace API_WEB_Control_de_Compras.Controllers
     public class ComprasController : Controller
     {
         private ISolicitudCompra database = new SolicitudCompra();
+        private NotificacionEmail emailNotify = new NotificacionEmail();
 
         [HttpPost]
         [Route("api/Compras/CrearCompra")]
@@ -25,6 +27,8 @@ namespace API_WEB_Control_de_Compras.Controllers
                 solicitud.fechaRegistro = DateTime.Now;
 
                 await database.InsertarSolicitudCompra(solicitud);
+
+                await emailNotify.NotificarSolicitante(solicitud.correoElectronico);
 
                 return Ok("Se ha creado la solicitud de compra");
             }

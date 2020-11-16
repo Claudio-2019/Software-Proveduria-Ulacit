@@ -12,9 +12,9 @@ export class AuthGuardGuard implements CanActivate {
   constructor(private autenticacion:LoginServiceService ,private rutoe:Router){
 
   }
-  canActivate(): boolean  {
+  canActivate(): boolean{
    
-   if(this.autenticacion.IsLogguedIn()){
+   if(this.autenticacion.IsLogguedInAdminisitrador()){
      return true;
     
    }else{

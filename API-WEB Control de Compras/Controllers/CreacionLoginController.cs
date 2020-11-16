@@ -57,7 +57,7 @@ namespace API_WEB_Control_de_Compras.Controllers
             }
             else
             {
-                login._id = new ObjectId(id);
+                login._id = id;
 
                 await database.UpdateLogin(login);
 

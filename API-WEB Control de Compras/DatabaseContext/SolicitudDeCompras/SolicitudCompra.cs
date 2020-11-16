@@ -47,7 +47,7 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras
 
         public async Task DeleteSolicitudCompra(string id)
         {
-            var FiltroConsulta = Builders<SolicitudCompraModel>.Filter.Eq(s => s._id, new ObjectId(id));
+            var FiltroConsulta = Builders<SolicitudCompraModel>.Filter.Eq(s => ObjectId.Parse(s._id), new ObjectId(id));
 
             await Collection.DeleteOneAsync(FiltroConsulta);
 

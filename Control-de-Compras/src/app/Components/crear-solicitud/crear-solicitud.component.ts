@@ -8,7 +8,7 @@ import { ComprasService } from "src/app/Services/Compras/compras.service";
   styleUrls: ['./crear-solicitud.component.css']
 })
 export class CrearSolicitudComponent implements OnInit {
-
+  StatusEmail:boolean = false;
   FormularioCompras:FormGroup;
 
   constructor(private builderForm:FormBuilder,private ComprasService_API:ComprasService) {
@@ -34,10 +34,12 @@ export class CrearSolicitudComponent implements OnInit {
    CrearCompra(){
 
     const OrdenCompra:ComprasModel={
+      _id:"",
       titulo: this.FormularioCompras.get('FormTitulo').value,
       descripcion: this.FormularioCompras.get('FormDescripcion').value,
       cantidad: Number.parseInt(this.FormularioCompras.get('FormCantidad').value),
       monto: Number.parseInt(this.FormularioCompras.get('FormMonto').value),
+      total:0,
       correoElectronico: this.FormularioCompras.get('FormCorreo').value,
       telefono:Number.parseInt( this.FormularioCompras.get('FormTelefono').value),
       nombreArticulo: this.FormularioCompras.get('FormArticulo').value,
@@ -49,7 +51,7 @@ export class CrearSolicitudComponent implements OnInit {
 
       alert("Orden de compra creada" + result.nombreArticulo);
     })
-
+    this.StatusEmail = true;
    }
 
 

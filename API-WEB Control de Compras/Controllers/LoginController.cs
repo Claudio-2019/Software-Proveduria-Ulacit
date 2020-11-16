@@ -14,138 +14,76 @@ namespace API_WEB_Control_de_Compras.Controllers
     public class LoginController : Controller
     {
         private ILoginAuth database = new LoginCollection();
+        private List<string> rolActual = new List<string>();
+        private readonly ArrayList listaAdministradores = new ArrayList();
+        private readonly ArrayList listaCompradores = new ArrayList();
+        private readonly ArrayList listaJefes = new ArrayList();
+        private readonly ArrayList listaFinancieros = new ArrayList();
 
         [HttpPost]
         [Route("api/Login/CrearAutenticacion")]
-        public async Task<Boolean> CrearAutenticacion([FromBody] LoginModel loginConnectionAuth)
+        public async Task<IActionResult> CrearAutenticacion([FromBody] LoginModel loginConnectionAuth)
         {
+            string[] roles = { "Administrador", "Comprador", "Jefe", "Financiero" };
+            var sesionAdministradores = await database.GetAuthenticationSystem();
+            var sesionComprador = await database.GetAuthenticationComprador();
+            var sesionJefe = await database.GetAuthenticationJefe();
+            var sesionFinanciero = await database.GetAuthenticationFinanciero();
 
-            var sesion = await database.GetAuthenticationSystem();
-
-            ArrayList lista = new ArrayList();
-
-            foreach (var datos in sesion)
+            foreach (var datos in sesionAdministradores)
             {
-                lista.Add(datos.Username);
-                lista.Add(datos.Password);
+                listaAdministradores.Add(datos.Username);
+                listaAdministradores.Add(datos.Password);
+            }
+            foreach (var datos in sesionComprador)
+            {
+                listaCompradores.Add(datos.Username);
+                listaCompradores.Add(datos.Password);
+            }
+            foreach (var datos in sesionJefe)
+            {
+                listaJefes.Add(datos.Username);
+                listaJefes.Add(datos.Password);
+            }
+            foreach (var datos in sesionFinanciero)
+            {
+                listaFinancieros.Add(datos.Username);
+                listaFinancieros.Add(datos.Password);
             }
 
             if (loginConnectionAuth == null)
             {
-                return false;
-            }
-            else 
-            {
-                if (lista.Contains(loginConnectionAuth.Username) && lista.Contains(loginConnectionAuth.Password))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-           
-
-        }
-        [HttpPost]
-        [Route("api/Login/AutenticacionJefe")]
-        public async Task<Boolean> AutenticacionJefe([FromBody] LoginJefe loginConnectionAuth)
-        {
-
-            var sesion = await database.GetAuthenticationJefe();
-
-            ArrayList lista = new ArrayList();
-
-            foreach (var datos in sesion)
-            {
-                lista.Add(datos.Username);
-                lista.Add(datos.Password);
-            }
-
-            if (loginConnectionAuth == null)
-            {
-                return false;
+                return NoContent();
             }
             else
             {
-                if (lista.Contains(loginConnectionAuth.Username) && lista.Contains(loginConnectionAuth.Password))
+                if (listaAdministradores.Contains(loginConnectionAuth.Username) && listaAdministradores.Contains(loginConnectionAuth.Password))
                 {
-                    return true;
+                    rolActual.Add(roles[0]);
+                    return Ok(rolActual);
+                }
+                else if (listaCompradores.Contains(loginConnectionAuth.Username) && listaCompradores.Contains(loginConnectionAuth.Password))
+                {
+                    rolActual.Add(roles[1]);
+                    return Ok(rolActual);
+                }
+                else if (listaJefes.Contains(loginConnectionAuth.Username) && listaJefes.Contains(loginConnectionAuth.Password))
+                {
+                    rolActual.Add(roles[2]);
+                    return Ok(rolActual);
+                }
+                else if (listaFinancieros.Contains(loginConnectionAuth.Username) && listaFinancieros.Contains(loginConnectionAuth.Password))
+                {
+                    rolActual.Add(roles[3]);
+                    return Ok(rolActual);
                 }
                 else
                 {
-                    return false;
+                    return NoContent();
                 }
             }
-
 
         }
-        [HttpPost]
-        [Route("api/Login/AutenticacionComprador")]
-        public async Task<Boolean> AutenticacionComprador([FromBody] LoginComprador loginConnectionAuth)
-        {
 
-            var sesion = await database.GetAuthenticationComprador();
-
-            ArrayList lista = new ArrayList();
-
-            foreach (var datos in sesion)
-            {
-                lista.Add(datos.Username);
-                lista.Add(datos.Password);
-            }
-
-            if (loginConnectionAuth == null)
-            {
-                return false;
-            }
-            else
-            {
-                if (lista.Contains(loginConnectionAuth.Username) && lista.Contains(loginConnectionAuth.Password))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-
-        }
-        [HttpPost]
-        [Route("api/Login/AutenticacionFinanciero")]
-        public async Task<Boolean> AutenticacionFinanciero([FromBody] LoginFinanciero loginConnectionAuth)
-        {
-
-            var sesion = await database.GetAuthenticationFinanciero();
-
-            ArrayList lista = new ArrayList();
-
-            foreach (var datos in sesion)
-            {
-                lista.Add(datos.Username);
-                lista.Add(datos.Password);
-            }
-
-            if (loginConnectionAuth == null)
-            {
-                return false;
-            }
-            else
-            {
-                if (lista.Contains(loginConnectionAuth.Username) && lista.Contains(loginConnectionAuth.Password))
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-
-
-        }
     }
 }

@@ -47,7 +47,7 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
 
         public async Task DeleteLogin(string id)
         {
-            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, new ObjectId(id));
+            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => ObjectId.Parse(s._id), new ObjectId(id));
 
             await Collection.DeleteOneAsync(FiltroConsulta);
 
