@@ -30,12 +30,64 @@
                     <li class="m-b-8">
                         <br>
                         <br>
-                        <span class="txt1">
-                            Olvide mi contraseña
-                        </span>
-                        <a href="" class="txt2">
-                            Contraseña Nueva
-                        </a>
+                      
+                     
+
+                        <a type="button" class="btn txt2" data-toggle="modal" data-target="#DialogAdministrador">Crear Usuario</a>
+                         
+                        <div class="modal fade" id="DialogAdministrador" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Agregar Administrador</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+            
+                                        <form [formGroup]="FormComprador" (ngSubmit)="CrearComprador()">
+                                            <div class="form-group">
+                                                <div class="form-row">
+                                                    <label for="FormNombre">Nombre</label>
+                                                    <input class="form-control" type="text" required
+                                                        formControlName="FormNombreComprador">
+                                                    <label for="FormNombre">Apellidos</label>
+                                                    <input class="form-control" type="text" required
+                                                        formControlName="FormApellidosComprador">
+                                                    <label for="FormNombre">Correo Electronico</label>
+                                                    <input class="form-control" type="email" required
+                                                        placeholder="username@domain.com" formControlName="FormCorreoComprador">
+                                                    <label for="FormNombre">Contraseña de Acceso</label>
+                                                    <input class="form-control" type="password" required
+                                                        formControlName="FormContraseñaComprador">
+                                                    <label for="">Tipo de Usuario</label>
+                                                    <select class="form-control" formControlName="FormTipoComprador">
+                                                        <option>Comprador</option>
+            
+                                                    </select>
+                                                    <label for="FormNombre">Jefe Directo</label>
+                                                    <input class="form-control" type="text" required
+                                                        formControlName="FormCompradorComprador">
+                                                    <br>
+            
+                                                </div>
+                                                <button type="submit" class="btn btn-primary"
+                                                    [disabled]="FormComprador.invalid">Crear Usuario</button>
+            
+                                            </div>
+                                            <div class="alert alert-success" role="alert" *ngIf="statusAgregacionfinanciero">
+                                                Se ha creado el usuario para las ordenes de compra
+                                            </div>
+            
+                                        </form>
+            
+                                    </div>
+            
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </fieldset>
 

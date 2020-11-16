@@ -24,7 +24,7 @@ namespace API_WEB_Control_de_Compras.Controllers
         [Route("api/Login/CrearAutenticacion")]
         public async Task<IActionResult> CrearAutenticacion([FromBody] LoginModel loginConnectionAuth)
         {
-            string[] roles = { "Administrador", "Comprador", "Jefe", "Financiero" };
+            string[] roles = { "Administrador", "Compradores", "Jefe", "Financiero","Usuario no encontrado" };
             var sesionAdministradores = await database.GetAuthenticationSystem();
             var sesionComprador = await database.GetAuthenticationComprador();
             var sesionJefe = await database.GetAuthenticationJefe();
@@ -32,23 +32,23 @@ namespace API_WEB_Control_de_Compras.Controllers
 
             foreach (var datos in sesionAdministradores)
             {
-                listaAdministradores.Add(datos.Username);
-                listaAdministradores.Add(datos.Password);
+                listaAdministradores.Add(datos.correoElectronico);
+                listaAdministradores.Add(datos.contrasena);
             }
             foreach (var datos in sesionComprador)
             {
-                listaCompradores.Add(datos.Username);
-                listaCompradores.Add(datos.Password);
+                listaCompradores.Add(datos.correoElectronico);
+                listaCompradores.Add(datos.contrasena);
             }
             foreach (var datos in sesionJefe)
             {
-                listaJefes.Add(datos.Username);
-                listaJefes.Add(datos.Password);
+                listaJefes.Add(datos.correoElectronico);
+                listaJefes.Add(datos.contrasena);
             }
             foreach (var datos in sesionFinanciero)
             {
-                listaFinancieros.Add(datos.Username);
-                listaFinancieros.Add(datos.Password);
+                listaFinancieros.Add(datos.correoElectronico);
+                listaFinancieros.Add(datos.contrasena);
             }
 
             if (loginConnectionAuth == null)
@@ -57,29 +57,30 @@ namespace API_WEB_Control_de_Compras.Controllers
             }
             else
             {
-                if (listaAdministradores.Contains(loginConnectionAuth.Username) && listaAdministradores.Contains(loginConnectionAuth.Password))
+                if (listaAdministradores.Contains(loginConnectionAuth.CorreoElectronico) && listaAdministradores.Contains(loginConnectionAuth.contraseña))
                 {
                     rolActual.Add(roles[0]);
                     return Ok(rolActual);
                 }
-                else if (listaCompradores.Contains(loginConnectionAuth.Username) && listaCompradores.Contains(loginConnectionAuth.Password))
+                else if (listaCompradores.Contains(loginConnectionAuth.CorreoElectronico) && listaCompradores.Contains(loginConnectionAuth.contraseña))
                 {
                     rolActual.Add(roles[1]);
                     return Ok(rolActual);
                 }
-                else if (listaJefes.Contains(loginConnectionAuth.Username) && listaJefes.Contains(loginConnectionAuth.Password))
+                else if (listaJefes.Contains(loginConnectionAuth.CorreoElectronico) && listaJefes.Contains(loginConnectionAuth.contraseña))
                 {
                     rolActual.Add(roles[2]);
                     return Ok(rolActual);
                 }
-                else if (listaFinancieros.Contains(loginConnectionAuth.Username) && listaFinancieros.Contains(loginConnectionAuth.Password))
+                else if (listaFinancieros.Contains(loginConnectionAuth.CorreoElectronico) && listaFinancieros.Contains(loginConnectionAuth.contraseña))
                 {
                     rolActual.Add(roles[3]);
                     return Ok(rolActual);
                 }
                 else
                 {
-                    return NoContent();
+                    rolActual.Add(roles[4]);
+                    return Ok(rolActual);
                 }
             }
 

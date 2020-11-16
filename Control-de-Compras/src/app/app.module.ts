@@ -10,6 +10,7 @@ import { DasboardCompradorComponent } from './Components/dasboard-comprador/dasb
 import { SolicitudesCompradorComponent } from './Components/solicitudes-comprador/solicitudes-comprador.component';
 import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
 import { CrearSolicitudComponent } from './Components/crear-solicitud/crear-solicitud.component';
+import { PanelAdministradorComponent } from './Components/panel-administrador/panel-administrador.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { CrearSolicitudComponent } from './Components/crear-solicitud/crear-soli
     SolicitudesCompradorComponent,
     SolicitudesJefeComponent,
     CrearSolicitudComponent,
+    PanelAdministradorComponent,
     
   
   ],

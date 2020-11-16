@@ -76,7 +76,7 @@
                             <tbody *ngFor="let datos of listaSolicitudes">
 
                                 <tr>
-                                   
+                                    <td>{{datos._id}}</td>
                                     <td>{{datos.titulo}}</td>
                                     <td>{{datos.cantidad}}</td>
                                     <td>{{datos.monto | currency}}</td>
@@ -86,7 +86,7 @@
                                     <td>{{datos.tipoArticulo}}</td>
                                     <td>{{datos.descripcion}}</td>
                                     <td>{{datos.correoElectronico}}</td>
-                                  
+
                                 </tr>
 
                             </tbody>

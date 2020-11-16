@@ -1,6 +1,6 @@
 export class LoginModel{
 
-    Username:string;
-    Password:string;
+    correoElectronico:string;
+    contraseña:string;
 
 }

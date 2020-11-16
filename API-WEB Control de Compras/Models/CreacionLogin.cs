@@ -19,7 +19,7 @@ namespace API_WEB_Control_de_Compras.Models
         [BsonElement]
         public string correoElectronico { get; set; }
         [BsonElement]
-        public string contraseña { get; set; }
+        public string contrasena { get; set; }
         [BsonElement]
         public string tipoUsuario { get; set; }
         [BsonElement]

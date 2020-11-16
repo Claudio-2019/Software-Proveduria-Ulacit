@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { LoginModel } from 'src/app/Models/Login';
+import { UsuariosModel } from "src/app/Models/Usuarios";
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 
@@ -14,6 +15,14 @@ export class LoginServiceService {
   GetAuthenticationJefe = 'api/Login/AutenticacionJefe';
   GetAuthenticationComprador = 'api/Login/AutenticacionComprador';
   GetAuthenticationFinanciero = 'api/Login/AutenticacionFinanciero';
+
+  InsertNewAdministrator = 'api/creacionLogin/InsertarUsuario';
+
+  GetListAdmins = 'api/creacionLogin/ListaAdministradores';
+  GetListCompradores = 'api/creacionLogin/ListaCompradores';
+  GetListJefes = 'api/creacionLogin/ListaJefes';
+  GetListFinanciero = 'api/creacionLogin/ListaFinancieros';
+
   statusLogin:any;
   statusJefe:any;
   statusComprador:any;
@@ -27,7 +36,6 @@ export class LoginServiceService {
 
     return this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthentication,SendCredentials)
     
-    
   }
   AuthenticateJefe(SendCredentials:LoginModel):Observable<LoginModel>{
 
@@ -37,7 +45,6 @@ export class LoginServiceService {
 
     
   }
-
   AuthenticateComprador(SendCredentials:LoginModel):Observable<LoginModel>{
 
     this.statusComprador = this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthenticationComprador,SendCredentials);
@@ -45,7 +52,6 @@ export class LoginServiceService {
     return this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthenticationComprador,SendCredentials);
 
   }
-
   AuthenticateFinanciero(SendCredentials:LoginModel):Observable<LoginModel>{
 
     this.statusFinanciero = this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthenticationFinanciero,SendCredentials);
@@ -53,6 +59,49 @@ export class LoginServiceService {
     return this.httpRequest.post<LoginModel>(this.ServerAPI+this.GetAuthenticationFinanciero,SendCredentials);
 
   }
+  CreateAdministrator(NewAdmin:UsuariosModel):Observable<UsuariosModel>{
+
+    return this.httpRequest.post<UsuariosModel>(this.ServerAPI+this.InsertNewAdministrator,NewAdmin);
+
+  }
+  CreateJefe(NewAdmin:UsuariosModel):Observable<UsuariosModel>{
+
+    return this.httpRequest.post<UsuariosModel>(this.ServerAPI+this.InsertNewAdministrator,NewAdmin);
+
+  }
+  CreateFinanciero(NewAdmin:UsuariosModel):Observable<UsuariosModel>{
+
+    return this.httpRequest.post<UsuariosModel>(this.ServerAPI+this.InsertNewAdministrator,NewAdmin);
+
+  }
+  CreateComprador(NewAdmin:UsuariosModel):Observable<UsuariosModel>{
+
+    return this.httpRequest.post<UsuariosModel>(this.ServerAPI+this.InsertNewAdministrator,NewAdmin);
+
+  }
+ 
+  LoadAdministrator(){
+
+    return this.httpRequest.get<UsuariosModel[]>(this.ServerAPI+this.GetListAdmins)
+  }
+  LoadCompradores(){
+
+    return this.httpRequest.get<UsuariosModel[]>(this.ServerAPI+this.GetListCompradores)
+  }
+  LoadJefes(){
+
+    return this.httpRequest.get<UsuariosModel[]>(this.ServerAPI+this.GetListJefes)
+  }
+  LoadFinancieros(){
+
+    return this.httpRequest.get<UsuariosModel[]>(this.ServerAPI+this.GetListFinanciero)
+  }
+
+
+
+
+
+
 
   IsLogguedInAdminisitrador(){
 

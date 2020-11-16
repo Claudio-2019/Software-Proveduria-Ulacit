@@ -15,44 +15,56 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
 
         internal DatabaseConfig repositorio = new DatabaseConfig();
 
-        private IMongoCollection<CreacionLoginModel> Collection;
+        private IMongoCollection<CreacionLoginModel> CollectionCompradores;
+        private IMongoCollection<CreacionLoginModel> CollectionAdministradores;
+        private IMongoCollection<CreacionLoginModel> CollectionJefes;
+        private IMongoCollection<CreacionLoginModel> CollectionFinancieros;
 
         public CreacionLoginCollection()
         {
-            Collection = repositorio.database.GetCollection<CreacionLoginModel>("Usuarios");
+            CollectionAdministradores = repositorio.database.GetCollection<CreacionLoginModel>("Administradores");
+            CollectionCompradores = repositorio.database.GetCollection<CreacionLoginModel>("Compradores");
+            CollectionJefes = repositorio.database.GetCollection<CreacionLoginModel>("Jefes");
+            CollectionFinancieros = repositorio.database.GetCollection<CreacionLoginModel>("Financieros");
         }
 
-        public async Task<List<CreacionLoginModel>> getAllLogin()
+        public async Task<List<CreacionLoginModel>> getAllAdministradores()
         {
-            return await Collection.FindAsync(new BsonDocument()).Result.ToListAsync();
+            return await CollectionAdministradores.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task<CreacionLoginModel> getLoginWithId(string id)
+        public async Task<List<CreacionLoginModel>> getAllCompradores()
         {
-
-            return await Collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } }).Result.FirstAsync();
+            return await CollectionCompradores.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task InsertarLogin(CreacionLoginModel login)
+        public async Task<List<CreacionLoginModel>> getAllJefes()
         {
-            await Collection.InsertOneAsync(login);
+            return await CollectionJefes.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task UpdateLogin(CreacionLoginModel login)
+        public async Task<List<CreacionLoginModel>> getAllFinancieros()
         {
-            var FiltroId = Builders<CreacionLoginModel>.Filter.Eq(dato => dato._id, login._id);
-
-            await Collection.ReplaceOneAsync(FiltroId, login);
+            return await CollectionFinancieros.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
-
-        public async Task DeleteLogin(string id)
+        public async Task InsertarComprador(CreacionLoginModel login)
         {
-            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => ObjectId.Parse(s._id), new ObjectId(id));
-
-            await Collection.DeleteOneAsync(FiltroConsulta);
+            await CollectionCompradores.InsertOneAsync(login);
+        }
+        public async Task InsertarAdmin(CreacionLoginModel login)
+        {
+            await CollectionAdministradores.InsertOneAsync(login);
+        }
+        public async Task InsertarJefe(CreacionLoginModel login)
+        {
+            await CollectionJefes.InsertOneAsync(login);
 
         }
+        public async Task InsertarFinanciero(CreacionLoginModel login)
+        {
+            await CollectionFinancieros.InsertOneAsync(login);
+        }
 
-        
+       
     }
 }

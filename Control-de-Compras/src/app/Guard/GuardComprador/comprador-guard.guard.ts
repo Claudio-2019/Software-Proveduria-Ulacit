@@ -10,9 +10,12 @@ export class CompradorGuardGuard implements CanActivate {
   constructor(private autenticacion:LoginServiceService ,private rutoe:Router){
 
   }
+  result:string;
+
   canActivate(): boolean  {
    
-   if(this.autenticacion.IsLogguedInComprador()){
+   if(this.autenticacion.IsLogguedInComprador() === "Compradores"){
+
      return true;
     
    }else{

@@ -10,13 +10,15 @@ import { DashboardJefeComponent } from './Components/dashboard-jefe/dashboard-je
 import { SolicitudesCompradorComponent } from './Components/solicitudes-comprador/solicitudes-comprador.component';
 import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
 import { CrearSolicitudComponent } from './Components/crear-solicitud/crear-solicitud.component';
+import { PanelAdministradorComponent } from './Components/panel-administrador/panel-administrador.component';
 
 const routes: Routes = [
 
+  {path: 'Panel-Administrador',component:PanelAdministradorComponent,canActivate:[AuthGuardGuard]},
   {path: 'DashboardComprador',component:DasboardCompradorComponent,canActivate:[CompradorGuardGuard]},
   {path: 'DashboardJefe',component:DashboardJefeComponent,canActivate:[JefeGuardGuard]},
   {path: 'SolicitudCompras',component:SolicitudesCompradorComponent,canActivate:[AuthGuardGuard]},
-  {path: 'Crear-Compra',component:CrearSolicitudComponent,canActivate:[CompradorGuardGuard]},
+  {path: 'Crear-Compra',component:CrearSolicitudComponent,canActivate:[AuthGuardGuard]},
   {path: 'DashboardFinanciero',component:DashboardFinancieroComponent,canActivate:[FinancieroGuardGuard]},
   {path: 'Solicitud-Jefe',component:SolicitudesJefeComponent,canActivate:[JefeGuardGuard]},
  

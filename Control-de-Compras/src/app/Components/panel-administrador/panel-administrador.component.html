@@ -1,0 +1,310 @@
+<div class="container">
+
+    <div class="row">
+
+        <div class="container">
+            <h3 class="text-left">Usuarios registrados como Compradores</h3>
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id del Usuario</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo Electronico</th>
+                        <th>Contraseña</th>
+                        <th>Tipo de Usuario</th>
+                        <th>Jefe Director</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let data of ListaCompradores">
+                    <tr>
+                        <td>{{data._id}}</td>
+                        <td>{{data.nombre}}</td>
+                        <td>{{data.apellidos}}</td>
+                        <td>{{data.correoElectronico}}</td>
+                        <td>{{data.contrasena}}</td>
+                        <td>{{data.tipoUsuario}}</td>
+                        <td>{{data.nombreJefe}}</td>
+                        <button class="btn btn-primary">Editar Usuario</button>
+                        <button class="btn btn-danger">Eliminar Usuario</button>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <hr>
+        </div>
+
+        <div class="container">
+            <h3 class="text-left">Usuarios administradores</h3>
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioAdmin()">refresh Information</button>        
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id del Usuario</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo Electronico</th>
+                        <th>Contraseña</th>
+                        <th>Tipo de Usuario</th>
+                        <th>Jefe Director</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let data of ListaAdministradores">
+                    <tr>
+                        <td>{{data._id}}</td>
+                        <td>{{data.nombre}}</td>
+                        <td>{{data.apellidos}}</td>
+                        <td>{{data.correoElectronico}}</td>
+                        <td>{{data.contrasena}}</td>
+                        <td>{{data.tipoUsuario}}</td>
+                        <td>{{data.nombreJefe}}</td>
+                        <button class="btn btn-primary">Editar Usuario</button>
+                        <button class="btn btn-danger">Eliminar Usuario</button>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DialogAdministrador">Agregar
+                Usuario Administrador</button>
+             
+            <div class="modal fade" id="DialogAdministrador" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar Administrador</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form [formGroup]="FormAdministrador" (ngSubmit)="CrearAdministrador()">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <label for="FormNombre">Nombre</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormNombreAdmin">
+                                        <label for="FormNombre">Apellidos</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormApellidosAdmin">
+                                        <label for="FormNombre">Correo Electronico</label>
+                                        <input class="form-control" type="email" required
+                                            placeholder="username@domain.com" formControlName="FormCorreoAdmin">
+                                        <label for="FormNombre">Contraseña de Acceso</label>
+                                        <input class="form-control" type="password" required
+                                            formControlName="FormContraseñanAdmin">
+                                        <label for="">Tipo de Usuario</label>
+                                        <select class="form-control" formControlName="FormTipoAdmin">
+                                            <option>Administrador</option>
+
+                                        </select>
+                                        <label for="FormNombre">Jefe Directo</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormJefeAdmin">
+                                        <br>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary"
+                                        [disabled]="FormAdministrador.invalid">Agregar Administrador</button>
+
+                                </div>
+                                <div class="alert alert-success" role="alert" *ngIf="statusAgregacionAdmin">
+                                    El Administrador fue agregado! exitosamente, ya puede cerrar el formulario
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+        </div>
+
+
+        <div class="container">
+            <h3 class="text-left">Usuarios Registrados como Jefe</h3>
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioJefes()">refresh Information</button>  
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id del Usuario</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo Electronico</th>
+                        <th>Contraseña</th>
+                        <th>Tipo de Usuario</th>
+                        <th>Jefe Director</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let data of ListaJefes">
+                    <tr>
+                        <td>{{data._id}}</td>
+                        <td>{{data.nombre}}</td>
+                        <td>{{data.apellidos}}</td>
+                        <td>{{data.correoElectronico}}</td>
+                        <td>{{data.contrasena}}</td>
+                        <td>{{data.tipoUsuario}}</td>
+                        <td>{{data.nombreJefe}}</td>
+                        <button class="btn btn-primary">Editar Usuario</button>
+                        <button class="btn btn-danger">Eliminar Usuario</button>
+                    </tr>
+
+                </tbody>
+            </table>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DialogJefe">Agregar
+                Usuario Jefe</button>
+            <div class="modal fade" id="DialogJefe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar Jefe</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form [formGroup]="FormJefes" (ngSubmit)="CrearJefe()">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <label for="FormNombre">Nombre</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormNombreJefes">
+                                        <label for="FormNombre">Apellidos</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormApellidosJefes">
+                                        <label for="FormNombre">Correo Electronico</label>
+                                        <input class="form-control" type="email" required
+                                            placeholder="username@domain.com" formControlName="FormCorreoJefes">
+                                        <label for="FormNombre">Contraseña de Acceso</label>
+                                        <input class="form-control" type="password" required
+                                            formControlName="FormContraseñaJefes">
+                                        <label for="">Tipo de Usuario</label>
+                                        <select class="form-control" formControlName="FormTipoJefes">
+                                            <option>Jefe</option>
+                                        </select>
+                                        <label for="FormNombre">Jefe Directo</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormJefeJefes">
+                                        <br>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" [disabled]="FormJefes.invalid">Agregar
+                                        Jefe</button>
+
+                                </div>
+                                <div class="alert alert-success" role="alert" *ngIf="statusAgregacionJefe">
+                                    El Jefe fue agregado! exitosamente, ya puede cerrar el formulario
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <br>
+            <hr>
+        </div>
+        <div class="container">
+            <br>
+
+            <h3 class="text-left">Usuarios Registrados como Financiero</h3>
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioFinancieros()">refresh Information</button>  
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id del Usuario</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Correo Electronico</th>
+                        <th>Contraseña</th>
+                        <th>Tipo de Usuario</th>
+                        <th>Jefe Director</th>
+                    </tr>
+                </thead>
+                <tbody *ngFor="let data of ListaFinancieros">
+                    <tr>
+                        <td>{{data._id}}</td>
+                        <td>{{data.nombre}}</td>
+                        <td>{{data.apellidos}}</td>
+                        <td>{{data.correoElectronico}}</td>
+                        <td>{{data.contrasena}}</td>
+                        <td>{{data.tipoUsuario}}</td>
+                        <td>{{data.nombreJefe}}</td>
+                        <button class="btn btn-primary">Editar Usuario</button>
+                        <button class="btn btn-danger">Eliminar Usuario</button>
+                    </tr>
+
+                </tbody>
+            </table>
+
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DialogFinanciero">Agregar
+                Usuario Financiero</button>
+            <div class="modal fade" id="DialogFinanciero" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Agregar Financiero</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form [formGroup]="FormFinancieros" (ngSubmit)="CrearFinanciero()">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <label for="FormNombre">Nombre</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormNombreFinancieros">
+                                            <br>
+                                        <label for="FormNombre">Apellidos</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormApellidosFinancieros">
+                                            <br>
+                                        <label for="FormNombre">Correo Electronico</label>
+                                        <input class="form-control" type="email" required
+                                            placeholder="username@domain.com" formControlName="FormCorreoFinancieros">
+                                        <label for="FormNombre">Contraseña de Acceso</label>
+                                        <input class="form-control" type="password" required
+                                            formControlName="FormContraseñanFinancieros">
+                                        <label for="">Tipo de Usuario</label>
+                                        <select class="form-control" formControlName="FormTipoFinancieros">
+                                            <option>Financiero</option>
+                                        </select>
+                                        <label for="FormNombre">Jefe Directo</label>
+                                        <input class="form-control" type="text" required
+                                            formControlName="FormJefeFinancieros">
+                                        <br>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-primary" [disabled]="FormFinancieros.invalid">Agregar
+                                        Financiero</button>
+
+                                </div>
+                                <div class="alert alert-success" role="alert" *ngIf="statusAgregacionfinanciero">
+                                    El Financiero fue agregado! exitosamente, ya puede cerrar el formulario
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
