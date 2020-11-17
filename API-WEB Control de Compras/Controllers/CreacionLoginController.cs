@@ -84,23 +84,23 @@ namespace API_WEB_Control_de_Compras.Controllers
         }
 
         //put para hacer update a login
-        //[HttpPut]
-        //[Route("api/creacionLogin/UpdateLogin/{id}")]
-        //public async Task<IActionResult> UpdateLogin([FromBody] CreacionLoginModel login, string id)
-        //{
-        //    if (login == null)
-        //    {
-        //        return BadRequest();
-        //    }
-        //    else
-        //    {
-        //        login._id = id;
+        [HttpPut]
+        [Route("api/creacionLogin/UpdateLogin/{id}")]
+        public async Task<IActionResult> UpdateLogin([FromBody] CreacionLoginModel login, string id)
+        {
+            if (login == null)
+            {
+                return BadRequest();
+            }
+            else
+            {
+                login._id = id;
 
-        //        await database.UpdateLogin(login);
+                await database.UpdateLogin(login);
 
-        //    }
-        //    return Created("Login Actualizado!!", true);
-        //}
+            }
+            return Created("Login Actualizado!!", true);
+        }
 
         ////delete para borrar notif
         //[HttpDelete]

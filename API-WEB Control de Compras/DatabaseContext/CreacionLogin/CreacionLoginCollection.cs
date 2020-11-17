@@ -65,6 +65,11 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
             await CollectionFinancieros.InsertOneAsync(login);
         }
 
-       
+        public async Task UpdateLogin(CreacionLoginModel login)
+        {
+            var FiltroId = Builders<CreacionLoginModel>.Filter.Eq(update => update._id, login._id);
+
+            await CollectionAdministradores.ReplaceOneAsync(FiltroId, login);
+        }
     }
 }

@@ -4,7 +4,7 @@
 
         <div class="container">
             <h3 class="text-left">Usuarios registrados como Compradores</h3>
-
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioCompradores()">refresh Information</button>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -15,6 +15,8 @@
                         <th>Contraseña</th>
                         <th>Tipo de Usuario</th>
                         <th>Jefe Director</th>
+                        <th>Edicion</th>
+                        <th>Eliminacion</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let data of ListaCompradores">
@@ -26,19 +28,72 @@
                         <td>{{data.contrasena}}</td>
                         <td>{{data.tipoUsuario}}</td>
                         <td>{{data.nombreJefe}}</td>
-                        <button class="btn btn-primary">Editar Usuario</button>
-                        <button class="btn btn-danger">Eliminar Usuario</button>
+                        <td> <button class="btn btn-primary" (click)="UserSelected(data)" data-toggle="modal"
+                                data-target="#EditComprador">Editar Usuario</button></td>
+
+                        <td> <button class="btn btn-danger">Eliminar Usuario</button></td>
                     </tr>
+
 
                 </tbody>
             </table>
 
             <hr>
         </div>
+        <div class="modal fade" id="EditComprador" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Usuario Actual: {{CurrentName}}
+                        </h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form [formGroup]="FormComprador">
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <label for="FormNombre">Nombre</label>
+                                    <input class="form-control" type="text" required value="{{CurrentName}}"
+                                        formControlName="FormNombreComprador">
+                                    <label for="FormNombre">Apellidos</label>
+                                    <input class="form-control" type="text" required value="{{CurrentLastname}}"
+                                        formControlName="FormApellidosComprador">
+                                    <label for="FormNombre">Correo Electronico</label>
+                                    <input class="form-control" type="email" required placeholder="username@domain.com"
+                                        value="{{CurrentCorreo}}" formControlName="FormCorreoComprador">
+                                    <label for="FormNombre">Contraseña de Acceso</label>
+                                    <input class="form-control" type="password" required value="{{CurrentContrasena}}"
+                                        formControlName="FormContraseñanComprador">
+                                    <label for="">Tipo de Usuario</label>
+                                    <select class="form-control" formControlName="FormTipoComprador">
+                                        <option>Comprador</option>
 
+                                    </select>
+                                    <label for="FormNombre">Jefe Directo</label>
+                                    <input class="form-control" type="text" required value="{{CurrentJefe}}"
+                                        formControlName="FormJefeComprador">
+                                    <br>
+
+                                </div>
+                                <button type="submit" class="btn btn-success"
+                                    [disabled]="FormAdministrador.invalid">Actualizar Usuario:
+                                    {{CurrentName}}</button>
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="container">
-            <h3 class="text-left">Usuarios administradores</h3>
-            <button class="btn btn-outline-success" (click)="ObtenerUsuarioAdmin()">refresh Information</button>        
+            <h3 class="text-left">Usuarios Registrados como administradores</h3>
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioAdmin()">refresh Information</button>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -49,6 +104,8 @@
                         <th>Contraseña</th>
                         <th>Tipo de Usuario</th>
                         <th>Jefe Director</th>
+                        <th>Edicion</th>
+                        <th>Eliminacion</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let data of ListaAdministradores">
@@ -60,16 +117,69 @@
                         <td>{{data.contrasena}}</td>
                         <td>{{data.tipoUsuario}}</td>
                         <td>{{data.nombreJefe}}</td>
-                        <button class="btn btn-primary">Editar Usuario</button>
-                        <button class="btn btn-danger">Eliminar Usuario</button>
+                        <td> <button class="btn btn-primary" (click)="UserSelected(data)" data-toggle="modal"
+                                data-target="#EditAdministrador">Editar Usuario</button></td>
+                        <td> <button class="btn btn-danger">Eliminar Usuario</button></td>
                     </tr>
 
                 </tbody>
             </table>
 
+            <div class="modal fade" id="EditAdministrador" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Usuario Actual: {{CurrentName}}
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="FormAdministrador">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <label for="FormNombre">Nombre</label>
+                                        <input class="form-control" type="text" required value="{{CurrentName}}"
+                                            formControlName="FormNombreAdmin">
+                                        <label for="FormNombre">Apellidos</label>
+                                        <input class="form-control" type="text" required value="{{CurrentLastname}}"
+                                            formControlName="FormApellidosAdmin">
+                                        <label for="FormNombre">Correo Electronico</label>
+                                        <input class="form-control" type="email" required
+                                            placeholder="username@domain.com" value="{{CurrentCorreo}}"
+                                            formControlName="FormCorreoAdmin">
+                                        <label for="FormNombre">Contraseña de Acceso</label>
+                                        <input class="form-control" type="password" required
+                                            value="{{CurrentContrasena}}" formControlName="FormContraseñanAdmin">
+                                        <label for="">Tipo de Usuario</label>
+                                        <select class="form-control" formControlName="FormTipoAdmin">
+                                            <option>Administrador</option>
+
+                                        </select>
+                                        <label for="FormNombre">Jefe Directo</label>
+                                        <input class="form-control" type="text" required value="{{CurrentJefe}}"
+                                            formControlName="FormJefeAdmin">
+                                        <br>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-success"
+                                        [disabled]="FormAdministrador.invalid">Actualizar Usuario:
+                                        {{CurrentName}}</button>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DialogAdministrador">Agregar
                 Usuario Administrador</button>
-             
+
             <div class="modal fade" id="DialogAdministrador" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
@@ -130,7 +240,7 @@
 
         <div class="container">
             <h3 class="text-left">Usuarios Registrados como Jefe</h3>
-            <button class="btn btn-outline-success" (click)="ObtenerUsuarioJefes()">refresh Information</button>  
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioJefes()">refresh Information</button>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -141,6 +251,8 @@
                         <th>Contraseña</th>
                         <th>Tipo de Usuario</th>
                         <th>Jefe Director</th>
+                        <th>Edicion</th>
+                        <th>Eliminacion</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let data of ListaJefes">
@@ -152,12 +264,66 @@
                         <td>{{data.contrasena}}</td>
                         <td>{{data.tipoUsuario}}</td>
                         <td>{{data.nombreJefe}}</td>
-                        <button class="btn btn-primary">Editar Usuario</button>
-                        <button class="btn btn-danger">Eliminar Usuario</button>
+                        <td> <button class="btn btn-primary" data-toggle="modal" data-target="#EditJefe"
+                                (click)="UserSelected(data)">Editar Usuario</button></td>
+
+                        <td><button class="btn btn-danger">Eliminar Usuario</button></td>
                     </tr>
 
                 </tbody>
             </table>
+            <div class="modal fade" id="EditJefe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Usuario Actual: {{CurrentName}}
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form [formGroup]="FormJefes">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <label for="FormNombre">Nombre</label>
+                                        <input class="form-control" type="text" required value="{{CurrentName}}"
+                                            formControlName="FormNombreJefes">
+                                        <label for="FormNombre">Apellidos</label>
+                                        <input class="form-control" type="text" required value="{{CurrentLastname}}"
+                                            formControlName="FormApellidosJefes">
+                                        <label for="FormNombre">Correo Electronico</label>
+                                        <input class="form-control" type="email" required
+                                            placeholder="username@domain.com" value="{{CurrentCorreo}}"
+                                            formControlName="FormCorreoJefes">
+                                        <label for="FormNombre">Contraseña de Acceso</label>
+                                        <input class="form-control" type="password" required
+                                            value="{{CurrentContrasena}}" formControlName="FormContraseñanJefes">
+                                        <label for="">Tipo de Usuario</label>
+                                        <select class="form-control" formControlName="FormTipoAdmin">
+                                            <option>Jefe</option>
+
+                                        </select>
+                                        <label for="FormNombre">Jefe Directo</label>
+                                        <input class="form-control" type="text" required value="{{CurrentJefe}}"
+                                            formControlName="FormJefeJefes">
+                                        <br>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-success"
+                                        [disabled]="FormAdministrador.invalid">Actualizar Usuario:
+                                        {{CurrentName}}</button>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DialogJefe">Agregar
                 Usuario Jefe</button>
             <div class="modal fade" id="DialogJefe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -219,7 +385,7 @@
             <br>
 
             <h3 class="text-left">Usuarios Registrados como Financiero</h3>
-            <button class="btn btn-outline-success" (click)="ObtenerUsuarioFinancieros()">refresh Information</button>  
+            <button class="btn btn-outline-success" (click)="ObtenerUsuarioFinancieros()">refresh Information</button>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -230,6 +396,8 @@
                         <th>Contraseña</th>
                         <th>Tipo de Usuario</th>
                         <th>Jefe Director</th>
+                        <th>Edicion</th>
+                        <th>Eliminacion</th>
                     </tr>
                 </thead>
                 <tbody *ngFor="let data of ListaFinancieros">
@@ -241,12 +409,65 @@
                         <td>{{data.contrasena}}</td>
                         <td>{{data.tipoUsuario}}</td>
                         <td>{{data.nombreJefe}}</td>
-                        <button class="btn btn-primary">Editar Usuario</button>
-                        <button class="btn btn-danger">Eliminar Usuario</button>
+                        <td> <button class="btn btn-primary" (click)="UserSelected(data)" data-toggle="modal"
+                                data-target="#EditFinanciero">Editar Usuario</button></td>
+                        <td><button class="btn btn-danger">Eliminar Usuario</button></td>
                     </tr>
 
                 </tbody>
             </table>
+            <div class="modal fade" id="EditFinanciero" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Usuario Actual Seleccionado: {{CurrentName}}
+                            </h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form [formGroup]="FormFinancieros">
+                                <div class="form-group">
+                                    <div class="form-row">
+                                        <label for="FormNombre">Nombre</label>
+                                        <input class="form-control" type="text" required value="{{CurrentName}}"
+                                            formControlName="FormNombreFinancieros">
+                                        <br>
+                                        <label for="FormNombre">Apellidos</label>
+                                        <input class="form-control" type="text" required value="{{CurrentLastname}}"
+                                            formControlName="FormApellidosFinancieros">
+                                        <br>
+                                        <label for="FormNombre">Correo Electronico</label>
+                                        <input class="form-control" type="email" required value="{{CurrentCorreo}}"
+                                            placeholder="username@domain.com" formControlName="FormCorreoFinancieros">
+                                        <label for="FormNombre">Contraseña de Acceso</label>
+                                        <input class="form-control" type="password" required value="{{CurrentContrasena}}"
+                                            formControlName="FormContraseñanFinancieros">
+                                        <label for="">Tipo de Usuario</label>
+                                        <select class="form-control" formControlName="FormTipoFinancieros">
+                                            <option>Financiero</option>
+                                        </select>
+                                        <label for="FormNombre">Jefe Directo</label>
+                                        <input class="form-control" type="text" required value="{{CurrentJefe}}"
+                                            formControlName="FormJefeFinancieros">
+                                        <br>
+
+                                    </div>
+                                    <button type="submit" class="btn btn-outline-success"
+                                        [disabled]="FormFinancieros.invalid">Agregar
+                                        Financiero</button>
+
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DialogFinanciero">Agregar
                 Usuario Financiero</button>
@@ -261,18 +482,17 @@
                             </button>
                         </div>
                         <div class="modal-body">
-
                             <form [formGroup]="FormFinancieros" (ngSubmit)="CrearFinanciero()">
                                 <div class="form-group">
                                     <div class="form-row">
                                         <label for="FormNombre">Nombre</label>
                                         <input class="form-control" type="text" required
                                             formControlName="FormNombreFinancieros">
-                                            <br>
+                                        <br>
                                         <label for="FormNombre">Apellidos</label>
                                         <input class="form-control" type="text" required
                                             formControlName="FormApellidosFinancieros">
-                                            <br>
+                                        <br>
                                         <label for="FormNombre">Correo Electronico</label>
                                         <input class="form-control" type="email" required
                                             placeholder="username@domain.com" formControlName="FormCorreoFinancieros">
@@ -289,7 +509,8 @@
                                         <br>
 
                                     </div>
-                                    <button type="submit" class="btn btn-primary" [disabled]="FormFinancieros.invalid">Agregar
+                                    <button type="submit" class="btn btn-primary"
+                                        [disabled]="FormFinancieros.invalid">Agregar
                                         Financiero</button>
 
                                 </div>

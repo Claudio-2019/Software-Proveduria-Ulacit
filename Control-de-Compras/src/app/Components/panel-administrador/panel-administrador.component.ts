@@ -17,6 +17,7 @@ export class PanelAdministradorComponent implements OnInit {
   ListaFinancieros: UsuariosModel[];
 
   FormAdministrador: FormGroup;
+  FormComprador:FormGroup;
   FormJefes: FormGroup;
   FormFinancieros: FormGroup;
   statusAgregacionAdmin:boolean;
@@ -56,7 +57,16 @@ export class PanelAdministradorComponent implements OnInit {
       FormJefeFinancieros: ['', Validators.required]
 
     })
+    this.FormComprador = this.builderForm.group({
 
+      FormNombreComprador: ['', Validators.required],
+      FormApellidosComprador: ['', Validators.required],
+      FormCorreoComprador: ['', Validators.required],
+      FormContraseñanComprador: ['', Validators.required],
+      FormTipoComprador: ['', Validators.required],
+      FormJefeComprador: ['', Validators.required]
+
+    })
 
   }
 
@@ -155,6 +165,35 @@ export class PanelAdministradorComponent implements OnInit {
       this.ListaCompradores = result;
 
     })
+  }
+
+  CurrentId:string;
+  CurrentName:string;
+  CurrentLastname:string;
+  CurrentCorreo:string;
+  CurrentContrasena:string;
+  CurrentJefe:string;
+
+  UserSelected(selectUser:any){
+    this.CurrentId = selectUser._id
+    this.CurrentName = selectUser.nombre;
+    this.CurrentLastname = selectUser.apellidos;
+    this.CurrentCorreo = selectUser.correoElectronico;
+    this.CurrentContrasena = selectUser.contrasena;
+    this.CurrentJefe = selectUser.nombreJefe;
+
+    const UpdateUser:UsuariosModel ={
+      _id:"",
+      nombre:this.FormComprador.get('FormNombreComprador').value,
+      apellidos:this.FormComprador.get('FormApellidosComprador').value,
+      correoElectronico:this.FormComprador.get('FormCorreoComprador').value,
+      contrasena:this.FormComprador.get('FormContraseñaComprador').value,
+      tipoUsuario:this.FormComprador.get('FormTipoComprador').value,
+      nombreJefe:this.FormComprador.get('FormCompradorComprador').value,
+
+    }
+
+    this.API_Usuarios.updateComprador
   }
 
 
