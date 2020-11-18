@@ -102,21 +102,21 @@ namespace API_WEB_Control_de_Compras.Controllers
             return Created("Login Actualizado!!", true);
         }
 
-        ////delete para borrar notif
-        //[HttpDelete]
-        //[Route("api/creacionLogin/DeleteLogin/{id}")]
-        //public async Task<IActionResult> DeleteLogin(string id)
-        //{
-        //    if (id == String.Empty)
-        //    {
-        //        return NoContent();
+        //delete para borrar notif
+        [HttpDelete]
+        [Route("api/creacionLogin/DeleteLogin/{id}")]
+        public async Task<IActionResult> DeleteLogin(string id)
+        {
+            if (id == String.Empty)
+            {
+                return NoContent();
 
-        //    }
-        //    else
-        //    {
-        //        await database.DeleteLogin(id);
-        //        return Ok();
-        //    }
-        //}
+            }
+            else
+            {
+                await database.DeleteLogin(id);
+                return Ok();
+            }
+        }
     }
 }

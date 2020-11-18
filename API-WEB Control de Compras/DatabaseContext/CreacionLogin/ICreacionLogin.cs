@@ -13,7 +13,7 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
         Task InsertarJefe(CreacionLoginModel login);
         Task InsertarFinanciero(CreacionLoginModel login);
         Task UpdateLogin(CreacionLoginModel login);
-        //Task DeleteLogin(string id);
+        Task DeleteLogin(string id);
         //Task<CreacionLoginModel> getLoginWithId(string id);
         Task<List<CreacionLoginModel>> getAllAdministradores();
         Task<List<CreacionLoginModel>> getAllCompradores();

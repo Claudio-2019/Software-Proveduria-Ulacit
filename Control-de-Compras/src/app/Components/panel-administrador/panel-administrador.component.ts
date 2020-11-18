@@ -193,7 +193,7 @@ export class PanelAdministradorComponent implements OnInit {
 
     }
 
-    this.API_Usuarios.updateComprador
+   
   }
 
 
