@@ -20,7 +20,7 @@ const routes: Routes = [
   {path: 'SolicitudCompras',component:SolicitudesCompradorComponent,canActivate:[AuthGuardGuard]},
   {path: 'Crear-Compra',component:CrearSolicitudComponent,canActivate:[AuthGuardGuard]},
   {path: 'DashboardFinanciero',component:DashboardFinancieroComponent,canActivate:[FinancieroGuardGuard]},
-  {path: 'Solicitud-Jefe',component:SolicitudesJefeComponent,canActivate:[JefeGuardGuard]},
+  {path: 'SolicitudJefe', component:SolicitudesJefeComponent},
  
   { path: '**',   redirectTo: '/' }
 

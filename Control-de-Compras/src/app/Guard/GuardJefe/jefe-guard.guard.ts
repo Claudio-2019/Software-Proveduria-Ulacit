@@ -10,9 +10,13 @@ export class JefeGuardGuard implements CanActivate {
   constructor(private autenticacion:LoginServiceService ,private rutoe:Router){
 
   }
+
+  result : string
+
   canActivate(): boolean  {
    
-   if(this.autenticacion.IsLogguedInJefe()){
+   if(this.autenticacion.IsLogguedInJefe() === 'Jefe'){
+
      return true;
     
    }else{

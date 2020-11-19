@@ -16,6 +16,7 @@ export class AppComponent {
   ngOnInit(): void {
     //this.AuthenticacionOn();
   }
+  
   FormularioLogin: FormGroup;
   FormComprador:FormGroup;
   statusAgregacionfinanciero:boolean;
@@ -92,11 +93,17 @@ export class AppComponent {
 
         } else if (this.TestBolean === "Jefe") {
 
-          this.ShowAlertAuth = true;
+          
+          localStorage.setItem('status', JSON.stringify(result));
 
-          this.HideLogin = true;
+          alert("Inicio correcto como: "+result);
 
-          return false;
+          this.ruteo.navigateByUrl('/SolicitudJefe')
+          
+          this.ShowAlertAuth = false;
+          this.HideLogin = false;
+          return true;
+
         }else if (this.TestBolean === "financiero") {
 
           this.ShowAlertAuth = true;
@@ -108,7 +115,7 @@ export class AppComponent {
           return false;
         }
 
-      });
+      })
 
 
     }
