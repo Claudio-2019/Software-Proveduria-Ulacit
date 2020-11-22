@@ -9,6 +9,7 @@ import { DashboardFinancieroComponent } from './Components/dashboard-financiero/
 import { DashboardJefeComponent } from './Components/dashboard-jefe/dashboard-jefe.component';
 import { SolicitudesCompradorComponent } from './Components/solicitudes-comprador/solicitudes-comprador.component';
 import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
+import { SolicitudesFinancieroComponent } from './Components/solicitudes-financiero/solicitudes-financiero.component';
 import { CrearSolicitudComponent } from './Components/crear-solicitud/crear-solicitud.component';
 import { PanelAdministradorComponent } from './Components/panel-administrador/panel-administrador.component';
 
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'Crear-Compra',component:CrearSolicitudComponent,canActivate:[AuthGuardGuard]},
   {path: 'DashboardFinanciero',component:DashboardFinancieroComponent,canActivate:[FinancieroGuardGuard]},
   {path: 'SolicitudJefe', component:SolicitudesJefeComponent},
+  {path: 'SolicitudFinanciero', component:SolicitudesFinancieroComponent },
  
   { path: '**',   redirectTo: '/' }
 

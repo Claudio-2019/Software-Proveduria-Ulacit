@@ -10,9 +10,11 @@ export class FinancieroGuardGuard implements CanActivate {
   constructor(private autenticacion:LoginServiceService ,private rutoe:Router){
 
   }
+  result : string
+  
   canActivate(): boolean  {
    
-   if(this.autenticacion.IsLogguedInFinanciero()){
+   if(this.autenticacion.IsLogguedInFinanciero()=== 'Financiero'){
      return true;
     
    }else{

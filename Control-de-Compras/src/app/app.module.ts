@@ -11,6 +11,7 @@ import { SolicitudesCompradorComponent } from './Components/solicitudes-comprado
 import { SolicitudesJefeComponent } from './Components/solicitudes-jefe/solicitudes-jefe.component';
 import { CrearSolicitudComponent } from './Components/crear-solicitud/crear-solicitud.component';
 import { PanelAdministradorComponent } from './Components/panel-administrador/panel-administrador.component';
+import { SolicitudesFinancieroComponent } from './Components/solicitudes-financiero/solicitudes-financiero.component';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { PanelAdministradorComponent } from './Components/panel-administrador/pa
     SolicitudesJefeComponent,
     CrearSolicitudComponent,
     PanelAdministradorComponent,
+    SolicitudesFinancieroComponent,
     
   
   ],

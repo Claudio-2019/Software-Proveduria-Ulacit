@@ -106,13 +106,16 @@ export class AppComponent {
 
         }else if (this.TestBolean === "financiero") {
 
-          this.ShowAlertAuth = true;
+           
+          localStorage.setItem('status', JSON.stringify(result));
 
-          this.HideLogin = true;
+          alert("Inicio correcto como: "+result);
 
-         
-
-          return false;
+          this.ruteo.navigateByUrl('/SolicitudFinanciero')
+          
+          this.ShowAlertAuth = false;
+          this.HideLogin = false;
+          return true;
         }
 
       })
