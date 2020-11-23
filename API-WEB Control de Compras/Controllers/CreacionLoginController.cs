@@ -38,15 +38,6 @@ namespace API_WEB_Control_de_Compras.Controllers
         {
             return Ok(await database.getAllFinancieros());
         }
-
-        //get por id
-        //[HttpGet]
-        //[Route("api/creacionLogin/GetLogin/{id}")]
-        //public async Task<IActionResult> GetLogin(string id)
-        //{
-        //    return Ok(await database.getLoginWithId(id));
-        //}
-
         //post para agregar
         [HttpPost]
         [Route("api/creacionLogin/InsertarUsuario")]
@@ -76,46 +67,83 @@ namespace API_WEB_Control_de_Compras.Controllers
                 await database.InsertarFinanciero(NewUser);
 
             }
-
             return Ok("Usuario creado en la base de datos");
-
-
 
         }
 
         //put para hacer update a login
         [HttpPut]
-        [Route("api/creacionLogin/UpdateLogin/{id}")]
-        public async Task<IActionResult> UpdateLogin([FromBody] CreacionLoginModel login, string id)
+        [Route("api/creacionLogin/UpdateUsers/{id}")]
+        public async Task<IActionResult> UpdateAdministrator([FromBody] CreacionLoginModel login)
         {
             if (login == null)
             {
                 return BadRequest();
             }
-            else
+            else if (login.tipoUsuario == "Administrador")
             {
-                login._id = id;
 
-                await database.UpdateLogin(login);
+                await database.UpdateAdministrator(login);
+                return Created("Usuario Actualizado!!", true);
 
             }
-            return Created("Login Actualizado!!", true);
+            else if (login.tipoUsuario == "Comprador")
+            {
+
+                await database.UpdateComprador(login);
+                return Created("Usuario Actualizado!!", true);
+
+            }
+            else if (login.tipoUsuario == "Jefe")
+            {
+
+                await database.UpdateJefe(login);
+                return Created("Usuario Actualizado!!", true);
+
+            }
+            else if (login.tipoUsuario == "Financiero")
+            {
+                await database.UpdateFinanciero(login);
+                return Created("Usuario Actualizado!!", true);
+            }
+
+            return Created("Database updated!!", true);
         }
 
         //delete para borrar notif
         [HttpDelete]
         [Route("api/creacionLogin/DeleteLogin/{id}")]
-        public async Task<IActionResult> DeleteLogin(string id)
+        public async Task<IActionResult> DeleteLogin([FromBody] CreacionLoginModel deleteLogin)
         {
-            if (id == String.Empty)
+            if (deleteLogin._id == String.Empty)
             {
                 return NoContent();
 
             }
+            else if(deleteLogin.tipoUsuario == "Comprador")
+            {
+                await database.DeleteComprador(deleteLogin._id);
+                return Ok("Comprador eliminado del sistema");
+            }
+            else if (deleteLogin.tipoUsuario == "Administrador")
+            {
+                await database.DeleteAdministrator(deleteLogin._id);
+                return Ok("Administrador eliminado del sistema");
+            }
+            else if (deleteLogin.tipoUsuario == "Jefe")
+            {
+                await database.DeleteJefe(deleteLogin._id);
+                return Ok("Jefe eliminado del sistema");
+
+            }
+            else if (deleteLogin._id == "Financiero")
+            {
+                await database.DeleteFinanciero(deleteLogin._id);
+                return Ok("Financiero eliminado del sistema");
+            }
             else
             {
-                await database.DeleteLogin(id);
-                return Ok();
+                return NotFound("No se encontro el usuario a eliminar!");
             }
         }
     }

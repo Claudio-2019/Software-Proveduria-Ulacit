@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SolicitudesFinancieroComponent implements OnInit {
 
-  @Input() correo: string
+  
   
   constructor() { }
 

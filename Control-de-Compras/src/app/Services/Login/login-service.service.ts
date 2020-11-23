@@ -5,6 +5,7 @@ import { UsuariosModel } from "src/app/Models/Usuarios";
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { ComprasModel } from 'src/app/Models/Compras';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class LoginServiceService {
   GetAuthenticationFinanciero = 'api/Login/AutenticacionFinanciero';
 
   InsertNewAdministrator = 'api/creacionLogin/InsertarUsuario';
-  UpdateNewComprador = 'api/creacionLogin/UpdateLogin/';
+  UpdateNewComprador = 'api/creacionLogin/UpdateUsers/';
+  DeleteUserSpace = 'api/creacionLogin/DeleteLogin/';
 
   GetListAdmins = 'api/creacionLogin/ListaAdministradores';
   GetListCompradores = 'api/creacionLogin/ListaCompradores';
@@ -81,7 +83,6 @@ export class LoginServiceService {
     return this.httpRequest.post<UsuariosModel>(this.ServerAPI+this.InsertNewAdministrator,NewAdmin);
 
   }
- 
   LoadAdministrator(){
 
     return this.httpRequest.get<UsuariosModel[]>(this.ServerAPI+this.GetListAdmins)
@@ -99,13 +100,14 @@ export class LoginServiceService {
     return this.httpRequest.get<UsuariosModel[]>(this.ServerAPI+this.GetListFinanciero)
   }
 
-  updateUsuario(comprador:ComprasModel,id:string){
-    return this.httpRequest.put<ComprasModel>(this.ServerAPI+this.UpdateNewComprador+id,comprador);
+  updateUsuario(userUpdate:UsuariosModel){
+    return this.httpRequest.put<ComprasModel>(this.ServerAPI+this.UpdateNewComprador+userUpdate._id,userUpdate);
   }
 
+  DeleteUsuario(TipoUser:UsuariosModel){
 
-
-
+    this.httpRequest.delete<boolean>(this.ServerAPI+this.DeleteUserSpace+TipoUser._id);
+  }
 
 
   IsLogguedInAdminisitrador(){

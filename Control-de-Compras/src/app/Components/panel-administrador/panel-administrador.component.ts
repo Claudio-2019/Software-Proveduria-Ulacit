@@ -20,6 +20,8 @@ export class PanelAdministradorComponent implements OnInit {
   FormComprador:FormGroup;
   FormJefes: FormGroup;
   FormFinancieros: FormGroup;
+  FormGenericUser:FormGroup;
+
   statusAgregacionAdmin:boolean;
   statusAgregacionJefe:boolean;
   statusAgregacionfinanciero:boolean;
@@ -68,6 +70,15 @@ export class PanelAdministradorComponent implements OnInit {
 
     })
 
+    this.FormGenericUser = this.builderForm.group({
+      
+      FormGenericNombre: ['', Validators.required],
+      FormGenericApellido: ['', Validators.required],
+      FormGenericCorreo: ['', Validators.required],
+      FormGenericPassword: ['', Validators.required],
+      FormGenericTipoUsuario: ['', Validators.required],
+      FormGenericJefe: ['', Validators.required]
+    })
   }
 
   CrearAdministrador(){
@@ -181,19 +192,25 @@ export class PanelAdministradorComponent implements OnInit {
     this.CurrentCorreo = selectUser.correoElectronico;
     this.CurrentContrasena = selectUser.contrasena;
     this.CurrentJefe = selectUser.nombreJefe;
+   
+  }
+
+  UpdateUserSelected(){
 
     const UpdateUser:UsuariosModel ={
-      _id:"",
-      nombre:this.FormComprador.get('FormNombreComprador').value,
-      apellidos:this.FormComprador.get('FormApellidosComprador').value,
-      correoElectronico:this.FormComprador.get('FormCorreoComprador').value,
-      contrasena:this.FormComprador.get('FormContraseñaComprador').value,
-      tipoUsuario:this.FormComprador.get('FormTipoComprador').value,
-      nombreJefe:this.FormComprador.get('FormCompradorComprador').value,
-
+      _id:this.CurrentId,
+      nombre:this.FormGenericUser.get('FormGenericNombre').value,
+      apellidos:this.FormGenericUser.get('FormGenericApellido').value,
+      correoElectronico:this.FormGenericUser.get('FormGenericCorreo').value,
+      contrasena:this.FormGenericUser.get('FormGenericPassword').value,
+      tipoUsuario:this.FormGenericUser.get('FormGenericTipoUsuario').value,
+      nombreJefe:this.FormGenericUser.get('FormGenericJefe').value,
     }
 
-   
+    this.API_Usuarios.updateUsuario(UpdateUser).subscribe(result => {
+
+      console.log(result);
+    })
   }
 
 

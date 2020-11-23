@@ -70,18 +70,10 @@
                                     </tr>
                                 </thead>
     
-                                <tbody *ngFor="let datos of listaSolicitudes">
+                                <tbody >
 
                                     <tr>
-                                        <td>{{datos.titulo}}</td>
-                                        <td>{{datos.cantidad}}</td>
-                                        <td>{{datos.monto | currency}}</td>
-                                        <td>{{datos.total | currency}}</td>
-                                        <td>{{datos.telefono}}</td>
-                                        <td>{{datos.nombreArticulo}}</td>
-                                        <td>{{datos.tipoArticulo}}</td>
-                                        <td>{{datos.descripcion}}</td>
-                                        <td>{{datos.correoElectronico}}</td>
+                                       
                                         <td>
                                             <button class="btn btn-success">Aprobar solicitud</button>
                                             <button class="btn btn-danger">Rechazar solicitud</button>

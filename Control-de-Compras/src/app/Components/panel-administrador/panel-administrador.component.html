@@ -52,34 +52,33 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form [formGroup]="FormComprador">
+                        <form [formGroup]="FormGenericUser" (ngSubmit)="UpdateUserSelected()">
                             <div class="form-group">
                                 <div class="form-row">
                                     <label for="FormNombre">Nombre</label>
                                     <input class="form-control" type="text" required value="{{CurrentName}}"
-                                        formControlName="FormNombreComprador">
+                                        formControlName="FormGenericNombre">
                                     <label for="FormNombre">Apellidos</label>
                                     <input class="form-control" type="text" required value="{{CurrentLastname}}"
-                                        formControlName="FormApellidosComprador">
+                                        formControlName="FormGenericApellido">
                                     <label for="FormNombre">Correo Electronico</label>
                                     <input class="form-control" type="email" required placeholder="username@domain.com"
-                                        value="{{CurrentCorreo}}" formControlName="FormCorreoComprador">
+                                        value="{{CurrentCorreo}}" formControlName="FormGenericCorreo">
                                     <label for="FormNombre">Contraseña de Acceso</label>
                                     <input class="form-control" type="password" required value="{{CurrentContrasena}}"
-                                        formControlName="FormContraseñanComprador">
+                                        formControlName="FormGenericPassword">
                                     <label for="">Tipo de Usuario</label>
-                                    <select class="form-control" formControlName="FormTipoComprador">
+                                    <select class="form-control" formControlName="FormGenericTipoUsuario">
                                         <option>Comprador</option>
 
                                     </select>
                                     <label for="FormNombre">Jefe Directo</label>
                                     <input class="form-control" type="text" required value="{{CurrentJefe}}"
-                                        formControlName="FormJefeComprador">
+                                        formControlName="FormGenericJefe">
                                     <br>
 
                                 </div>
-                                <button type="submit" class="btn btn-success"
-                                    [disabled]="FormAdministrador.invalid">Actualizar Usuario:
+                                <button type="submit" class="btn btn-success">Actualizar Usuario:
                                     {{CurrentName}}</button>
 
                             </div>
@@ -137,37 +136,35 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form [formGroup]="FormAdministrador">
+                            <form [formGroup]="FormGenericUser" (ngSubmit)="UpdateUserSelected()">
                                 <div class="form-group">
                                     <div class="form-row">
                                         <label for="FormNombre">Nombre</label>
                                         <input class="form-control" type="text" required value="{{CurrentName}}"
-                                            formControlName="FormNombreAdmin">
+                                            formControlName="FormGenericNombre">
                                         <label for="FormNombre">Apellidos</label>
                                         <input class="form-control" type="text" required value="{{CurrentLastname}}"
-                                            formControlName="FormApellidosAdmin">
+                                            formControlName="FormGenericApellido">
                                         <label for="FormNombre">Correo Electronico</label>
                                         <input class="form-control" type="email" required
                                             placeholder="username@domain.com" value="{{CurrentCorreo}}"
-                                            formControlName="FormCorreoAdmin">
+                                            formControlName="FormGenericCorreo">
                                         <label for="FormNombre">Contraseña de Acceso</label>
                                         <input class="form-control" type="password" required
-                                            value="{{CurrentContrasena}}" formControlName="FormContraseñanAdmin">
+                                            value="{{CurrentContrasena}}" formControlName="FormGenericPassword">
                                         <label for="">Tipo de Usuario</label>
-                                        <select class="form-control" formControlName="FormTipoAdmin">
+                                        <select class="form-control" formControlName="FormGenericTipoUsuario">
                                             <option>Administrador</option>
 
                                         </select>
                                         <label for="FormNombre">Jefe Directo</label>
                                         <input class="form-control" type="text" required value="{{CurrentJefe}}"
-                                            formControlName="FormJefeAdmin">
+                                            formControlName="FormGenericJefe">
                                         <br>
 
                                     </div>
-                                    <button type="submit" class="btn btn-success"
-                                        [disabled]="FormAdministrador.invalid">Actualizar Usuario:
+                                    <button type="submit" class="btn btn-success">Actualizar Usuario:
                                         {{CurrentName}}</button>
-
                                 </div>
                             </form>
                         </div>
@@ -284,37 +281,35 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form [formGroup]="FormJefes">
+                            <form [formGroup]="FormGenericUser" (ngSubmit)="UpdateUserSelected()">
                                 <div class="form-group">
                                     <div class="form-row">
                                         <label for="FormNombre">Nombre</label>
                                         <input class="form-control" type="text" required value="{{CurrentName}}"
-                                            formControlName="FormNombreJefes">
+                                            formControlName="FormGenericNombre">
                                         <label for="FormNombre">Apellidos</label>
                                         <input class="form-control" type="text" required value="{{CurrentLastname}}"
-                                            formControlName="FormApellidosJefes">
+                                            formControlName="FormGenericApellido">
                                         <label for="FormNombre">Correo Electronico</label>
                                         <input class="form-control" type="email" required
                                             placeholder="username@domain.com" value="{{CurrentCorreo}}"
-                                            formControlName="FormCorreoJefes">
+                                            formControlName="FormGenericCorreo">
                                         <label for="FormNombre">Contraseña de Acceso</label>
                                         <input class="form-control" type="password" required
-                                            value="{{CurrentContrasena}}" formControlName="FormContraseñanJefes">
+                                            value="{{CurrentContrasena}}" formControlName="FormGenericPassword">
                                         <label for="">Tipo de Usuario</label>
-                                        <select class="form-control" formControlName="FormTipoAdmin">
+                                        <select class="form-control" formControlName="FormGenericTipoUsuario">
                                             <option>Jefe</option>
 
                                         </select>
                                         <label for="FormNombre">Jefe Directo</label>
                                         <input class="form-control" type="text" required value="{{CurrentJefe}}"
-                                            formControlName="FormJefeJefes">
+                                            formControlName="FormGenericJefe">
                                         <br>
 
                                     </div>
-                                    <button type="submit" class="btn btn-success"
-                                        [disabled]="FormAdministrador.invalid">Actualizar Usuario:
+                                    <button type="submit" class="btn btn-success">Actualizar Usuario:
                                         {{CurrentName}}</button>
-
                                 </div>
                             </form>
                         </div>
@@ -421,50 +416,48 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Usuario Actual Seleccionado: {{CurrentName}}
+                            <h5 class="modal-title" id="exampleModalLabel">Usuario Actual: {{CurrentName}}
                             </h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-
-                            <form [formGroup]="FormFinancieros">
+                            <form [formGroup]="FormGenericUser" (ngSubmit)="UpdateUserSelected()">
                                 <div class="form-group">
                                     <div class="form-row">
                                         <label for="FormNombre">Nombre</label>
                                         <input class="form-control" type="text" required value="{{CurrentName}}"
-                                            formControlName="FormNombreFinancieros">
-                                        <br>
+                                            formControlName="FormGenericNombre">
                                         <label for="FormNombre">Apellidos</label>
                                         <input class="form-control" type="text" required value="{{CurrentLastname}}"
-                                            formControlName="FormApellidosFinancieros">
-                                        <br>
+                                            formControlName="FormGenericApellido">
                                         <label for="FormNombre">Correo Electronico</label>
-                                        <input class="form-control" type="email" required value="{{CurrentCorreo}}"
-                                            placeholder="username@domain.com" formControlName="FormCorreoFinancieros">
+                                        <input class="form-control" type="email" required
+                                            placeholder="username@domain.com" value="{{CurrentCorreo}}"
+                                            formControlName="FormGenericCorreo">
                                         <label for="FormNombre">Contraseña de Acceso</label>
-                                        <input class="form-control" type="password" required value="{{CurrentContrasena}}"
-                                            formControlName="FormContraseñanFinancieros">
+                                        <input class="form-control" type="password" required
+                                            value="{{CurrentContrasena}}" formControlName="FormGenericPassword">
                                         <label for="">Tipo de Usuario</label>
-                                        <select class="form-control" formControlName="FormTipoFinancieros">
+                                        <select class="form-control" formControlName="FormGenericTipoUsuario">
                                             <option>Financiero</option>
+
                                         </select>
                                         <label for="FormNombre">Jefe Directo</label>
                                         <input class="form-control" type="text" required value="{{CurrentJefe}}"
-                                            formControlName="FormJefeFinancieros">
+                                            formControlName="FormGenericJefe">
                                         <br>
 
                                     </div>
-                                    <button type="submit" class="btn btn-outline-success"
-                                        [disabled]="FormFinancieros.invalid">Agregar
-                                        Financiero</button>
-
+                                    <button type="submit" class="btn btn-success">Actualizar Usuario:
+                                        {{CurrentName}}</button>
                                 </div>
                             </form>
+                        </div>
+                        <div class="modal-footer">
 
                         </div>
-
                     </div>
                 </div>
             </div>
