@@ -111,7 +111,7 @@ export class AppComponent {
 
           alert("Inicio correcto como: "+result);
 
-          this.ruteo.navigateByUrl('/SolicitudFinanciero')
+          this.ruteo.navigateByUrl('/DashboardFinanciero')
           
           this.ShowAlertAuth = false;
           this.HideLogin = false;

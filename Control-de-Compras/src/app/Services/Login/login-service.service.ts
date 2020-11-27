@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { LoginModel } from 'src/app/Models/Login';
 import { UsuariosModel } from "src/app/Models/Usuarios";
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { ComprasModel } from 'src/app/Models/Compras';
 import { identifierModuleUrl } from '@angular/compiler';
@@ -20,7 +20,7 @@ export class LoginServiceService {
 
   InsertNewAdministrator = 'api/creacionLogin/InsertarUsuario';
   UpdateNewComprador = 'api/creacionLogin/UpdateUsers/';
-  DeleteUserSpace = 'api/creacionLogin/DeleteLogin/';
+  DeleteUserSpace = 'api/creacionLogin/DeleteLogin';
 
   GetListAdmins = 'api/creacionLogin/ListaAdministradores';
   GetListCompradores = 'api/creacionLogin/ListaCompradores';
@@ -104,9 +104,11 @@ export class LoginServiceService {
     return this.httpRequest.put<ComprasModel>(this.ServerAPI+this.UpdateNewComprador+userUpdate._id,userUpdate);
   }
 
-  DeleteUsuario(TipoUser:UsuariosModel){
+  DeleteUsuario(idUsuario:UsuariosModel){
 
-    this.httpRequest.delete<boolean>(this.ServerAPI+this.DeleteUserSpace+TipoUser._id);
+    //const headerDelete ={'_id':idUsuario._id,'tipoUsuario':idUsuario.tipoUsuario};
+
+    return this.httpRequest.post(this.ServerAPI+this.DeleteUserSpace,idUsuario);
   }
 
 

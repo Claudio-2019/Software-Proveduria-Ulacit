@@ -31,7 +31,8 @@
                         <td> <button class="btn btn-primary" (click)="UserSelected(data)" data-toggle="modal"
                                 data-target="#EditComprador">Editar Usuario</button></td>
 
-                        <td> <button class="btn btn-danger">Eliminar Usuario</button></td>
+                        <td> <button class="btn btn-danger" (click)="UserSelectedBorrar(data)">Eliminar Usuario</button>
+                        </td>
                     </tr>
 
 
@@ -118,7 +119,8 @@
                         <td>{{data.nombreJefe}}</td>
                         <td> <button class="btn btn-primary" (click)="UserSelected(data)" data-toggle="modal"
                                 data-target="#EditAdministrador">Editar Usuario</button></td>
-                        <td> <button class="btn btn-danger">Eliminar Usuario</button></td>
+                        <td> <button class="btn btn-danger" (click)="UserSelectedBorrar(data)">Eliminar Usuario</button>
+                        </td>
                     </tr>
 
                 </tbody>
@@ -264,7 +266,8 @@
                         <td> <button class="btn btn-primary" data-toggle="modal" data-target="#EditJefe"
                                 (click)="UserSelected(data)">Editar Usuario</button></td>
 
-                        <td><button class="btn btn-danger">Eliminar Usuario</button></td>
+                        <td><button class="btn btn-danger" (click)="UserSelectedBorrar(data)">Eliminar Usuario</button>
+                        </td>
                     </tr>
 
                 </tbody>
@@ -406,7 +409,8 @@
                         <td>{{data.nombreJefe}}</td>
                         <td> <button class="btn btn-primary" (click)="UserSelected(data)" data-toggle="modal"
                                 data-target="#EditFinanciero">Editar Usuario</button></td>
-                        <td><button class="btn btn-danger">Eliminar Usuario</button></td>
+                        <td><button class="btn btn-danger" (click)="UserSelectedBorrar(data)">Eliminar Usuario</button>
+                        </td>
                     </tr>
 
                 </tbody>

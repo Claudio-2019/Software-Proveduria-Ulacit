@@ -17,14 +17,14 @@ export class PanelAdministradorComponent implements OnInit {
   ListaFinancieros: UsuariosModel[];
 
   FormAdministrador: FormGroup;
-  FormComprador:FormGroup;
+  FormComprador: FormGroup;
   FormJefes: FormGroup;
   FormFinancieros: FormGroup;
-  FormGenericUser:FormGroup;
+  FormGenericUser: FormGroup;
 
-  statusAgregacionAdmin:boolean;
-  statusAgregacionJefe:boolean;
-  statusAgregacionfinanciero:boolean;
+  statusAgregacionAdmin: boolean;
+  statusAgregacionJefe: boolean;
+  statusAgregacionfinanciero: boolean;
 
   constructor(private API_Usuarios: LoginServiceService, private builderForm: FormBuilder) {
 
@@ -71,7 +71,7 @@ export class PanelAdministradorComponent implements OnInit {
     })
 
     this.FormGenericUser = this.builderForm.group({
-      
+
       FormGenericNombre: ['', Validators.required],
       FormGenericApellido: ['', Validators.required],
       FormGenericCorreo: ['', Validators.required],
@@ -81,16 +81,16 @@ export class PanelAdministradorComponent implements OnInit {
     })
   }
 
-  CrearAdministrador(){
+  CrearAdministrador() {
 
-    const Administrador:UsuariosModel ={
-      _id:"",
-      nombre:this.FormAdministrador.get('FormNombreAdmin').value,
-      apellidos:this.FormAdministrador.get('FormApellidosAdmin').value,
-      correoElectronico:this.FormAdministrador.get('FormCorreoAdmin').value,
-      contrasena:this.FormAdministrador.get('FormContraseñanAdmin').value,
-      tipoUsuario:this.FormAdministrador.get('FormTipoAdmin').value,
-      nombreJefe:this.FormAdministrador.get('FormJefeAdmin').value,
+    const Administrador: UsuariosModel = {
+      _id: "",
+      nombre: this.FormAdministrador.get('FormNombreAdmin').value,
+      apellidos: this.FormAdministrador.get('FormApellidosAdmin').value,
+      correoElectronico: this.FormAdministrador.get('FormCorreoAdmin').value,
+      contrasena: this.FormAdministrador.get('FormContraseñanAdmin').value,
+      tipoUsuario: this.FormAdministrador.get('FormTipoAdmin').value,
+      nombreJefe: this.FormAdministrador.get('FormJefeAdmin').value,
 
     }
 
@@ -100,39 +100,39 @@ export class PanelAdministradorComponent implements OnInit {
     })
 
     this.statusAgregacionAdmin = true;
-    
-  }
-  CrearJefe(){
 
-    const Jefe:UsuariosModel ={
-      _id:"",
-      nombre:this.FormJefes.get('FormNombreJefes').value,
-      apellidos:this.FormJefes.get('FormApellidosJefes').value,
-      correoElectronico:this.FormJefes.get('FormCorreoJefes').value,
-      contrasena:this.FormJefes.get('FormContraseñaJefes').value,
-      tipoUsuario:this.FormJefes.get('FormTipoJefes').value,
-      nombreJefe:this.FormJefes.get('FormJefeJefes').value,
+  }
+  CrearJefe() {
+
+    const Jefe: UsuariosModel = {
+      _id: "",
+      nombre: this.FormJefes.get('FormNombreJefes').value,
+      apellidos: this.FormJefes.get('FormApellidosJefes').value,
+      correoElectronico: this.FormJefes.get('FormCorreoJefes').value,
+      contrasena: this.FormJefes.get('FormContraseñaJefes').value,
+      tipoUsuario: this.FormJefes.get('FormTipoJefes').value,
+      nombreJefe: this.FormJefes.get('FormJefeJefes').value,
 
     }
 
     this.API_Usuarios.CreateJefe(Jefe).subscribe(result => {
 
       alert("El Jefe ha sido creado");
-     
+
     })
     this.statusAgregacionJefe = true;
-   
-  }
-  CrearFinanciero(){
 
-    const Financiero:UsuariosModel ={
-      _id:"",
-      nombre:this.FormFinancieros.get('FormNombreFinancieros').value,
-      apellidos:this.FormFinancieros.get('FormApellidosFinancieros').value,
-      correoElectronico:this.FormFinancieros.get('FormCorreoFinancieros').value,
-      contrasena:this.FormFinancieros.get('FormContraseñanFinancieros').value,
-      tipoUsuario:this.FormFinancieros.get('FormTipoFinancieros').value,
-      nombreJefe:this.FormFinancieros.get('FormJefeFinancieros').value,
+  }
+  CrearFinanciero() {
+
+    const Financiero: UsuariosModel = {
+      _id: "",
+      nombre: this.FormFinancieros.get('FormNombreFinancieros').value,
+      apellidos: this.FormFinancieros.get('FormApellidosFinancieros').value,
+      correoElectronico: this.FormFinancieros.get('FormCorreoFinancieros').value,
+      contrasena: this.FormFinancieros.get('FormContraseñanFinancieros').value,
+      tipoUsuario: this.FormFinancieros.get('FormTipoFinancieros').value,
+      nombreJefe: this.FormFinancieros.get('FormJefeFinancieros').value,
 
     }
 
@@ -143,7 +143,7 @@ export class PanelAdministradorComponent implements OnInit {
     this.statusAgregacionfinanciero = true;
   }
 
-  ObtenerUsuarioAdmin(){
+  ObtenerUsuarioAdmin() {
 
     this.API_Usuarios.LoadAdministrator().subscribe(result => {
 
@@ -151,7 +151,7 @@ export class PanelAdministradorComponent implements OnInit {
 
     })
   }
-  ObtenerUsuarioJefes(){
+  ObtenerUsuarioJefes() {
 
     this.API_Usuarios.LoadJefes().subscribe(result => {
 
@@ -160,7 +160,7 @@ export class PanelAdministradorComponent implements OnInit {
     })
   }
 
-  ObtenerUsuarioFinancieros(){
+  ObtenerUsuarioFinancieros() {
 
     this.API_Usuarios.LoadFinancieros().subscribe(result => {
 
@@ -169,7 +169,7 @@ export class PanelAdministradorComponent implements OnInit {
     })
   }
 
-  ObtenerUsuarioCompradores(){
+  ObtenerUsuarioCompradores() {
 
     this.API_Usuarios.LoadCompradores().subscribe(result => {
 
@@ -178,39 +178,60 @@ export class PanelAdministradorComponent implements OnInit {
     })
   }
 
-  CurrentId:string;
-  CurrentName:string;
-  CurrentLastname:string;
-  CurrentCorreo:string;
-  CurrentContrasena:string;
-  CurrentJefe:string;
+  CurrentId: string;
+  CurrentName: string;
+  CurrentLastname: string;
+  CurrentCorreo: string;
+  CurrentContrasena: string;
+  CurrentJefe: string;
 
-  UserSelected(selectUser:any){
+  UserSelected(selectUser: any) {
     this.CurrentId = selectUser._id
     this.CurrentName = selectUser.nombre;
     this.CurrentLastname = selectUser.apellidos;
     this.CurrentCorreo = selectUser.correoElectronico;
     this.CurrentContrasena = selectUser.contrasena;
     this.CurrentJefe = selectUser.nombreJefe;
-   
+
   }
 
-  UpdateUserSelected(){
+  UpdateUserSelected() {
 
-    const UpdateUser:UsuariosModel ={
-      _id:this.CurrentId,
-      nombre:this.FormGenericUser.get('FormGenericNombre').value,
-      apellidos:this.FormGenericUser.get('FormGenericApellido').value,
-      correoElectronico:this.FormGenericUser.get('FormGenericCorreo').value,
-      contrasena:this.FormGenericUser.get('FormGenericPassword').value,
-      tipoUsuario:this.FormGenericUser.get('FormGenericTipoUsuario').value,
-      nombreJefe:this.FormGenericUser.get('FormGenericJefe').value,
+    const UpdateUser: UsuariosModel = {
+      _id: this.CurrentId,
+      nombre: this.FormGenericUser.get('FormGenericNombre').value,
+      apellidos: this.FormGenericUser.get('FormGenericApellido').value,
+      correoElectronico: this.FormGenericUser.get('FormGenericCorreo').value,
+      contrasena: this.FormGenericUser.get('FormGenericPassword').value,
+      tipoUsuario: this.FormGenericUser.get('FormGenericTipoUsuario').value,
+      nombreJefe: this.FormGenericUser.get('FormGenericJefe').value,
     }
 
     this.API_Usuarios.updateUsuario(UpdateUser).subscribe(result => {
 
       console.log(result);
     })
+  }
+
+  UserSelectedBorrar(selectUser: any) {
+
+
+    const UserForDelete: UsuariosModel = {
+      _id: selectUser._id,
+      apellidos: selectUser.apellidos,
+      nombreJefe: selectUser.nombreJefe,
+      contrasena: selectUser.contrasena,
+      correoElectronico: selectUser.correoElectronico,
+      nombre: selectUser.nombre,
+      tipoUsuario: selectUser.tipoUsuario
+    }
+    console.log(UserForDelete._id)
+    console.log(UserForDelete.tipoUsuario)
+    this.API_Usuarios.DeleteUsuario(UserForDelete).subscribe(result => {
+      alert("Usuario eliminado" + result);
+    });
+
+    this.ObtenerUsuarioCompradores();
   }
 
 

@@ -111,8 +111,8 @@ namespace API_WEB_Control_de_Compras.Controllers
         }
 
         //delete para borrar notif
-        [HttpDelete]
-        [Route("api/creacionLogin/DeleteLogin/{id}")]
+        [HttpPost]
+        [Route("api/creacionLogin/DeleteLogin")]
         public async Task<IActionResult> DeleteLogin([FromBody] CreacionLoginModel deleteLogin)
         {
             if (deleteLogin._id == String.Empty)
@@ -136,7 +136,7 @@ namespace API_WEB_Control_de_Compras.Controllers
                 return Ok("Jefe eliminado del sistema");
 
             }
-            else if (deleteLogin._id == "Financiero")
+            else if (deleteLogin.tipoUsuario == "Financiero")
             {
                 await database.DeleteFinanciero(deleteLogin._id);
                 return Ok("Financiero eliminado del sistema");

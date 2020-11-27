@@ -83,27 +83,27 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin
 
             await CollectionFinancieros.ReplaceOneAsync(FiltroId, login);
         }
-        public async Task DeleteAdministrator(string id)
+        public async Task DeleteAdministrator(string idSelected)
         {
-            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, id);
+            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, idSelected);
 
             await CollectionAdministradores.DeleteOneAsync(FiltroConsulta);
         }
-        public async Task DeleteComprador(string id)
+        public async Task DeleteComprador(string idSelected)
         {
-            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, id);
+            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, idSelected);
 
             await CollectionCompradores.DeleteOneAsync(FiltroConsulta);
         }
-        public async Task DeleteJefe(string id)
+        public async Task DeleteJefe(string idSelected)
         {
-            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, id);
+            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, idSelected);
 
             await CollectionJefes.DeleteOneAsync(FiltroConsulta);
         }
-        public async Task DeleteFinanciero(string id)
+        public async Task DeleteFinanciero(string idSelected)
         {
-            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, id);
+            var FiltroConsulta = Builders<CreacionLoginModel>.Filter.Eq(s => s._id, idSelected);
 
             await CollectionFinancieros.DeleteOneAsync(FiltroConsulta);
         }
