@@ -65,8 +65,6 @@ export class AppComponent {
 
         if (this.TestBolean === "Administrador") {
 
-          localStorage.setItem('status', JSON.stringify(result));
-
           alert("Inicio correcto como: "+ result);
 
           this.ruteo.navigate(['/Panel-Administrador']);
@@ -93,8 +91,6 @@ export class AppComponent {
 
         } else if (this.TestBolean === "Jefe") {
 
-          
-          localStorage.setItem('status', JSON.stringify(result));
 
           alert("Inicio correcto como: "+result);
 
@@ -104,14 +100,11 @@ export class AppComponent {
           this.HideLogin = false;
           return true;
 
-        }else if (this.TestBolean === "financiero") {
-
-           
-          localStorage.setItem('status', JSON.stringify(result));
+        }else if (this.TestBolean === "Financiero") {
 
           alert("Inicio correcto como: "+result);
 
-          this.ruteo.navigateByUrl('/DashboardFinanciero')
+          this.ruteo.navigateByUrl('/SolicitudFinanciero')
           
           this.ShowAlertAuth = false;
           this.HideLogin = false;
