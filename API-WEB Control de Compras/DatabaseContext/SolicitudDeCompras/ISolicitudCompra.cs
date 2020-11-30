@@ -11,7 +11,7 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras
         Task InsertarSolicitudCompra(SolicitudCompraModel solicitudcompra);
         Task UpdateSolicitudCompra(SolicitudCompraModel solicitudcompra);
         Task DeleteSolicitudCompra(string id);
-        Task<SolicitudCompraModel> getSolicitudCompraWithId(string id);
-        Task<List<SolicitudCompraModel>> getAllSolicitudCompra();
+        Task<SolicitudCompraModel> GetSolicitudCompraWithId(string id);
+        Task<List<SolicitudCompraModel>> GetAllSolicitudCompra();
     }
 }

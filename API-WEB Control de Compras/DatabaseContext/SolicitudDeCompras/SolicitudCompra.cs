@@ -22,12 +22,12 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras
 
         }
 
-        public async Task<List<SolicitudCompraModel>> getAllSolicitudCompra()
+        public async Task<List<SolicitudCompraModel>> GetAllSolicitudCompra()
         {
             return await Collection.FindAsync(new BsonDocument()).Result.ToListAsync();
         }
 
-        public async Task<SolicitudCompraModel> getSolicitudCompraWithId(string id)
+        public async Task<SolicitudCompraModel> GetSolicitudCompraWithId(string id)
         {
 
             return await Collection.FindAsync(new BsonDocument { { "_id", new ObjectId(id) } }).Result.FirstAsync();
@@ -47,9 +47,10 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.SolicitudDeCompras
 
         public async Task DeleteSolicitudCompra(string id)
         {
-            var FiltroConsulta = Builders<SolicitudCompraModel>.Filter.Eq(s => ObjectId.Parse(s._id), new ObjectId(id));
+            //var FiltroConsulta = Builders<SolicitudCompraModel>.Filter.Eq(s => ObjectId.Parse(s._id), new ObjectId(id));
+            var filtroBorrar = Builders<SolicitudCompraModel>.Filter.Eq(s => s._id, id);
 
-            await Collection.DeleteOneAsync(FiltroConsulta);
+            await Collection.DeleteOneAsync(filtroBorrar);
 
         }
     }
