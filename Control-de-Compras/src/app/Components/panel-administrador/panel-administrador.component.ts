@@ -225,6 +225,7 @@ export class PanelAdministradorComponent implements OnInit {
       nombre: selectUser.nombre,
       tipoUsuario: selectUser.tipoUsuario
     }
+    
     console.log(UserForDelete._id)
     console.log(UserForDelete.tipoUsuario)
     this.API_Usuarios.DeleteUsuario(UserForDelete).subscribe(result => {

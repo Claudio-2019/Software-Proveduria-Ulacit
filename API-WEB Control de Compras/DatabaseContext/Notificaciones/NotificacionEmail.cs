@@ -26,7 +26,7 @@ namespace API_WEB_Control_de_Compras.DatabaseContext.Notificaciones
                 servicioSMTP.Host = "smtp.gmail.com";
                 servicioSMTP.EnableSsl = true;
                 servicioSMTP.UseDefaultCredentials = false;
-                servicioSMTP.Credentials = new NetworkCredential("claudiogh33@gmail.com", "Sangabriel8468B9.");
+                servicioSMTP.Credentials = new NetworkCredential("claudiogh33@gmail.com", "IT.s0p0rt3.MBS1998.");
                 servicioSMTP.DeliveryMethod = SmtpDeliveryMethod.Network;
                 servicioSMTP.Send(notificacion);
 

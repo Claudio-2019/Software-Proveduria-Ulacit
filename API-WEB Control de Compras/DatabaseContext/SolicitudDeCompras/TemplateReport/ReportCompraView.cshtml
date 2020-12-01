@@ -1,0 +1,42 @@
+﻿@using Wkhtmltopdf.NetCore.Interfaces;
+
+@model API_WEB_Control_de_Compras.Models.SolicitudCompraModel
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <table class="table table-striped">
+
+        <thead>
+            <th>Titulo de la compra</th>
+            <th>Articulo solicitado</th>
+            <th>Tipo de Articulo</th>
+            <th>Cantidad Total ponderada</th>
+            <th>Monto Total Ponderado por cada Articulo</th>
+            <th>Monto Total a pagar</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.titulo</td>
+                <td>@Model.nombreArticulo</td>
+                <td>@Model.tipoArticulo</td>
+                <td>@Model.cantidad</td>
+                <td>@Model.monto</td>
+                <td>@Model.total</td>
+            </tr>
+
+           
+        </tbody>
+
+    </table>
+
+
+</body>
+
+</html>

@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ComprasModel } from "src/app/Models/Compras";
+import { downloadFile } from "file-saver";
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +11,7 @@ export class ComprasService {
   ServerAPI = 'https://localhost:44366/';
   PostCompra = 'api/Compras/CrearCompra';
   GetCompras = 'api/Compras/ObtenerComprasActuales';
+  GetReportCompra ='api/Compras/ReportCompra';
 
   constructor(private httpRequest:HttpClient) { }
 

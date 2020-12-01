@@ -7,6 +7,20 @@
 
   <ItemGroup>
     <PackageReference Include="MongoDB.Driver" Version="2.11.3" />
+    <PackageReference Include="Wkhtmltopdf.NetCore" Version="3.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wkhtmltopdf\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="ReportsPDF\wkhtmltopdf.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="wkhtmltopdf\Windows\wkhtmltopdf.exe">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 
