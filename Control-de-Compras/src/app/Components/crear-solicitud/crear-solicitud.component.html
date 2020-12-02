@@ -59,7 +59,8 @@
                             <div class="value">
                                 <div>
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="text" name="titulo" formControlName="FormTitulo">
+                                        <input class="input--style-5" type="text" name="titulo"
+                                            formControlName="FormTitulo">
                                     </div>
                                 </div>
                             </div>
@@ -70,7 +71,8 @@
                             <div class="value">
                                 <div>
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="number" name="cantidad" formControlName="FormCantidad">
+                                        <input class="input--style-5" type="number" name="cantidad"
+                                            formControlName="FormCantidad">
                                     </div>
                                 </div>
                             </div>
@@ -81,7 +83,8 @@
                             <div class="value">
                                 <div>
                                     <div class="input-group-desc">
-                                        <input class="input--style-5" type="number" name="monto" formControlName="FormMonto">
+                                        <input class="input--style-5" type="number" name="monto"
+                                            formControlName="FormMonto">
                                     </div>
                                 </div>
                             </div>
@@ -92,7 +95,8 @@
                             <div class="name">Telefono</div>
                             <div class="value">
                                 <div class="input-group-desc">
-                                    <input class="input--style-5" type="tel" name="telefono" formControlName="FormTelefono">
+                                    <input class="input--style-5" type="tel" name="telefono"
+                                        formControlName="FormTelefono">
                                 </div>
                             </div>
                         </div>
@@ -102,7 +106,8 @@
                             <div class="name">Nombre de articulo</div>
                             <div class="value">
                                 <div class="input-group-desc">
-                                    <input class="input--style-5" type="text" name="nombrearticulo" formControlName="FormArticulo">
+                                    <input class="input--style-5" type="text" name="nombrearticulo"
+                                        formControlName="FormArticulo">
                                 </div>
                             </div>
                         </div>
@@ -111,15 +116,15 @@
                             <div class="name">Tipo de articulo</div>
                             <div class="value">
                                 <div class="input-group-desc">
-                                   <select class="input--style-5" required formControlName="FormTipoArticulo">
-                                       <option>Mobiliaria</option>
-                                       <option>Telecomunaciones</option>
-                                       <option>Software</option>
-                                       <option>Electricidad</option>
-                                       <option>Seguridad Electronica</option>
-                                       <option>Computadoras</option>
-                                       <option>Contabilidad</option>
-                                   </select>
+                                    <select class="input--style-5" required formControlName="FormTipoArticulo">
+                                        <option>Mobiliaria</option>
+                                        <option>Telecomunaciones</option>
+                                        <option>Software</option>
+                                        <option>Electricidad</option>
+                                        <option>Seguridad Electronica</option>
+                                        <option>Computadoras</option>
+                                        <option>Contabilidad</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -129,7 +134,8 @@
                             <div class="name">Descripcion</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="descripcion" formControlName="FormDescripcion">
+                                    <input class="input--style-5" type="text" name="descripcion"
+                                        formControlName="FormDescripcion">
                                 </div>
                             </div>
                         </div>
@@ -139,23 +145,29 @@
                             <div class="name">Correo</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="email" name="email" formControlName="FormCorreo">
+                                    <input class="input--style-5" type="email" name="email"
+                                        formControlName="FormCorreo">
                                 </div>
                             </div>
                         </div>
 
                         <div>
-                            <button class="btn btn--radius-2 btn--blue" type="submit" [disabled]="FormularioCompras.invalid">Solicitar Compra</button>
-                           
+                            <button class="btn btn--radius-2 btn--blue" type="submit"
+                                [disabled]="FormularioCompras.invalid">Solicitar Compra</button>
+
+                        </div>
+                        <div *ngIf="StatusEmail">
+                            <a href="https://localhost:44366/api/Compras/ReportCompra" target="_blank">Descargar
+                                Reporte</a>
                         </div>
                         <div class="alert alert-success" role="alert" *ngIf="StatusEmail">
                             Solicitud de compra creada!!!
-                          </div>
+                        </div>
                     </form>
 
-                   <a class="btn btn-warning" routerLink="/SolicitudCompras">Regresar al Dashboard</a>
-                   <br>
-                  
+                    <a class="btn btn-warning" routerLink="/SolicitudCompras">Regresar al Dashboard</a>
+                    <br>
+
                 </div>
             </div>
         </div>

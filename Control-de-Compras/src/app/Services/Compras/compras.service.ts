@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ComprasModel } from "src/app/Models/Compras";
 import {AprobacionModel} from 'src/app/Models/Aprobacion'
+import { downloadFile } from "file-saver";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,6 +15,8 @@ export class ComprasService {
   GetCompras = 'api/Compras/ObtenerComprasActuales';
   borraCompra = 'api/Compras/DeleteCompras';
   InsertSolFinanciero = 'api/aprobacionPorFinanciero/InsertAprobacion'
+  GetReportCompra ='api/Compras/ReportCompra';
+
 
   constructor(private httpRequest:HttpClient) { }
 
