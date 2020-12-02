@@ -1,25 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj": {}
+    "D:\\Cosas de U\\Implementacion\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj": {
+    "D:\\Cosas de U\\Implementacion\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
+        "projectUniqueName": "D:\\Cosas de U\\Implementacion\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
         "projectName": "API-WEB Control de Compras",
-        "projectPath": "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
-        "packagesPath": "C:\\Users\\ClaudioPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ClaudioPC\\Desktop\\PROYECTO APROBACION DE COMPRAS\\Software-Proveduria-Ulacit\\API-WEB Control de Compras\\obj\\",
+        "projectPath": "D:\\Cosas de U\\Implementacion\\API-WEB Control de Compras\\API-WEB Control de Compras.csproj",
+        "packagesPath": "C:\\Users\\Emanuel\\.nuget\\packages\\",
+        "outputPath": "D:\\Cosas de U\\Implementacion\\API-WEB Control de Compras\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\ClaudioPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\Emanuel\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,7 +29,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -42,7 +40,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "dependencies": {
             "MongoDB.Driver": {
               "target": "Package",
@@ -71,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

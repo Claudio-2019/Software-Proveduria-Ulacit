@@ -421,5 +421,38 @@ C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ul
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.genruntimeconfig.cache
+<<<<<<< HEAD
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\appsettings.Development.json
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\appsettings.json
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.exe
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.deps.json
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.runtimeconfig.json
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.runtimeconfig.dev.json
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\DnsClient.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\SharpCompress.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\libzstd.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy32.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\runtimes\win\native\snappy64.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csprojAssemblyReference.cache
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfoInputs.cache
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.AssemblyInfo.cs
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CoreCompileInputs.cache
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.MvcApplicationPartsAssemblyInfo.cache
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.RazorTargetAssemblyInfo.cache
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csproj.CopyComplete
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\staticwebassets\API-WEB Control de Compras.StaticWebAssets.Manifest.cache
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\staticwebassets\API-WEB Control de Compras.StaticWebAssets.xml
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.dll
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.pdb
+D:\Cosas de U\Implementacion\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.genruntimeconfig.cache
+=======
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\bin\Debug\netcoreapp3.1\wkhtmltopdf\Windows\wkhtmltopdf.exe
 C:\Users\ClaudioPC\Desktop\PROYECTO APROBACION DE COMPRAS\Software-Proveduria-Ulacit\API-WEB Control de Compras\obj\Debug\netcoreapp3.1\API-WEB Control de Compras.csprojAssemblyReference.cache
+>>>>>>> master

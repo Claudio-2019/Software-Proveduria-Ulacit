@@ -34,6 +34,7 @@ namespace API_WEB_Control_de_Compras.Controllers
         [Route("api/aprobacionPorFinanciero/InsertAprobacion")]
         public async Task<IActionResult> InsertAprobacion([FromBody] AprobacionPorFinancieroModel aprobacion)
         {
+            var test = aprobacion.titulo;
             if (aprobacion == null)
             {
                 return BadRequest();
