@@ -68,9 +68,20 @@
                                     </tr>
                                 </thead>
                                         
-                                <tbody>
+                                <tbody *ngFor = 'let solicitud of solicitudes'>
                                     <tr>
-                                        <td>test</td>
+                                        <td>{{solicitud.correoElectronico}}</td>
+                                        <td>{{solicitud.titulo}}</td>
+                                        <td>{{solicitud.cantidad}}</td>
+                                        <td>{{solicitud.monto}}</td>
+                                        <td>{{solicitud.telefono}}</td>
+                                        <td>{{solicitud.nombreArticulo}}</td>
+                                        <td>{{solicitud.tipoArticulo}}</td>
+                                        <td>{{solicitud.descripcion}}</td>
+                                        <td>
+                                            <button class="btn btn-outline-success" (click) = "aprobarSolic(solicitud)">Aprobar</button>
+                                            <button class="btn btn-outline-danger" (click) = "borrarCompras(solicitud)">Rechazar</button>
+                                        </td>
                                     </tr>
 
                                 </tbody>
