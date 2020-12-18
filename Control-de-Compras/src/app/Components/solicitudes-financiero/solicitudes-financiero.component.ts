@@ -1,6 +1,6 @@
 import { Component, OnInit,  Input, ɵɵqueryRefresh } from '@angular/core';
 import {ComprasModel} from 'src/app/Models/Compras'
-import {ComprasService} from 'src/app/Services/Compras/compras.service'
+import {AprobacionFinancieroService} from 'src/app/Services/Financieros/aprobacion-financiero.service'
 import {UsuariosModel} from 'src/app/Models/Usuarios'
 import {AprobacionModel} from 'src/app/Models/Aprobacion'
 import {LoginServiceService} from 'src/app/Services/Login/login-service.service'
@@ -17,17 +17,17 @@ export class SolicitudesFinancieroComponent implements OnInit {
   solicitudes: ComprasModel[]
   usuarios: UsuariosModel[]
 
-  constructor( private comprasAPI: ComprasService, private usuariosAPI: LoginServiceService) { }
+  constructor( private comprasAPI: AprobacionFinancieroService) { }
 
 
   cargaSolicitudes(){
-    this.comprasAPI.ComprasActuales().subscribe(resul =>{
+    this.comprasAPI.AprobacionesFinancierasActuales().subscribe(resul =>{
       this.solicitudes = resul
     })
   }
 
   borrarCompras(compra: ComprasModel){
-    this.comprasAPI.BorrarCompra(compra).subscribe(val=>{
+    this.comprasAPI.BorrarSolicitud(compra).subscribe(val=>{
         console.log(val)
         
     })

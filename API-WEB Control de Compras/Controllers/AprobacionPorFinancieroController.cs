@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using API_WEB_Control_de_Compras.DatabaseContext.AprobacionPorFinanciero;
+using API_WEB_Control_de_Compras.DatabaseContext.Notificaciones;
 using API_WEB_Control_de_Compras.Models;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
@@ -11,6 +12,8 @@ namespace API_WEB_Control_de_Compras.Controllers
 {
     public class AprobacionPorFinancieroController : Controller
     {
+        private NotificacionEmail notificacion = new NotificacionEmail();
+        
         private IAprobacionPorFinanciero database = new AprobacionPorFinancieroCollection();
 
         //get todos
@@ -41,8 +44,8 @@ namespace API_WEB_Control_de_Compras.Controllers
             }
             else
             {
-                await database.InsertarAprobacionPorFinanciero(aprobacion);
-
+                await notificacion.NotificarAprobacionFinanciero(aprobacion.correoElectronico);
+                return Ok("Se aprobo la solicitud de compra, se ha enviado una notificacion de correo electronico");
             }
             return Created("Aprobacion Insertada!!", true);
         }

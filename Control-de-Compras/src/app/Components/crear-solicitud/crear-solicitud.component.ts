@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { window } from 'rxjs/operators';
 import { ComprasModel } from 'src/app/Models/Compras';
 import { ComprasService } from "src/app/Services/Compras/compras.service";
-import { saveAs } from "file-saver/dist/FileSaver";
-
+import { saveAs } from "file-saver";
+import { FileSaver  } from "file-saver";
+import Axios from 'axios';
 @Component({
   selector: 'app-crear-solicitud',
   templateUrl: './crear-solicitud.component.html',
@@ -26,8 +27,6 @@ export class CrearSolicitudComponent implements OnInit {
       FormTelefono: ['', Validators.required],
       FormArticulo: ['', Validators.required],
       FormTipoArticulo: ['', Validators.required],
-
-
 
     });
 
@@ -54,11 +53,11 @@ export class CrearSolicitudComponent implements OnInit {
 
       alert("Orden de compra creada" + result.nombreArticulo);
     })
-
    
     this.StatusEmail = true;
   }
 
+  
 
   ngOnInit() {
   }

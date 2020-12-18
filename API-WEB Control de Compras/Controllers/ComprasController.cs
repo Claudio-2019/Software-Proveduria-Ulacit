@@ -49,33 +49,27 @@ namespace API_WEB_Control_de_Compras.Controllers
         }
         [HttpGet]
         [Route("api/Compras/ReportCompra")]
-        public async Task<IActionResult> ReportCompra()
+        public async Task<IActionResult> ReportCompra([FromBody] SolicitudCompraModel reporte)
         {
 
-            SolicitudCompraModel CompraActual;
+            SolicitudCompraModel CompraActual = new SolicitudCompraModel();
 
-            var CompraReport = new SolicitudCompraModel()
+            CompraActual = new SolicitudCompraModel
             {
-                titulo = CompraActual.titulo,
-                nombreArticulo = CompraActual.nombreArticulo,
-                tipoArticulo = CompraActual.tipoArticulo,
-                cantidad = CompraActual.cantidad,
-                monto = CompraActual.monto,
-                total = CompraActual.total,
-                correoElectronico = CompraActual.correoElectronico,
-                descripcion = CompraActual.descripcion,
+                titulo = reporte.titulo,
+                nombreArticulo = reporte.nombreArticulo,
+                tipoArticulo = reporte.tipoArticulo,
+                cantidad = reporte.cantidad,
+                monto = reporte.monto,
+                total = reporte.total,
+                correoElectronico = reporte.correoElectronico,
+                descripcion = reporte.descripcion,
                 fechaRegistro = DateTime.Now,
-                telefono = CompraActual.telefono,
-
-
+                telefono = reporte.telefono,
             };
 
-            return await NewCompradorReport.GetPdf("DatabaseContext/SolicitudDeCompras/TemplateReport/ReportCompraView.cshtml", CompraReport);
+            return await NewCompradorReport.GetPdf("DatabaseContext/SolicitudDeCompras/TemplateReport/ReportCompraView.cshtml", CompraActual);
         }
-
-
-
-
 
         [HttpGet]
         [Route("api/Compras/ObtenerComprasActuales")]

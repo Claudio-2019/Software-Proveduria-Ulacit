@@ -2,7 +2,7 @@
 <body class="sb-nav-fixed">
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Dashboard</a>
+        <a class="navbar-brand" href="">Dashboard de Jefe</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
                 class="fas fa-bars"></i></button>
         <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -50,6 +50,7 @@
                 <br>
                 <br>
                 <div class="card mb-4">
+                    <button class="btn btn-outline-success" (click)="cargaSolicitudes()">refresh Information</button>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -80,7 +81,9 @@
                                         <td>
                                             <button class="btn btn-outline-success" (click) = "aprobarSolic(solicitud)">Aprobar</button>
                                             <button class="btn btn-outline-danger" (click) = "borrarCompras(solicitud)">Rechazar</button>
+                                           
                                         </td>
+                                      
                                     </tr>
 
                                 </tbody>

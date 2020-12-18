@@ -14,7 +14,8 @@ export class SolicitudesJefeComponent implements OnInit {
   
   solicitudes: ComprasModel[]
   usuarios: UsuariosModel[]
-
+  statusAprobacion:any;
+  statusRechazo:any;
   constructor( private comprasAPI: ComprasService, private usuariosAPI: LoginServiceService) { }
 
   // cargaUsuarios(){
@@ -39,9 +40,11 @@ export class SolicitudesJefeComponent implements OnInit {
 
   aprobarSolic(compra){
     let aprob = this.refactorAprob(compra)
-    
+    this.statusAprobacion = true;
     this.comprasAPI.InsertAprobacion(aprob).subscribe(val=>{
       console.log(val)
+
+      alert("Solicitud aprobada, sera verificada por el financiero!!")
     })
 
   }

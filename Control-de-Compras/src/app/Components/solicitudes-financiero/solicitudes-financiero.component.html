@@ -1,8 +1,9 @@
 <router-outlet></router-outlet>
+
 <body class="sb-nav-fixed">
 
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-        <a class="navbar-brand" href="">Dashboard</a>
+        <a class="navbar-brand" href="">Dashboard Financiero</a>
         <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i
                 class="fas fa-bars"></i></button>
         <div class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
@@ -12,7 +13,7 @@
                         aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" routerLink="/">Salir</a>
+                        <a class="dropdown-item" href="login.html">Salir</a>
                     </div>
                 </li>
             </ul>
@@ -50,37 +51,35 @@
                 <br>
                 <br>
                 <div class="card mb-4">
+                    <button class="btn btn-outline-success" (click)="cargaSolicitudes()">refresh Information</button>
                     <div class="card-body">
                         <div class="table-responsive">
                             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                                 <thead>
                                     <tr>
-                                        <th>Nombre Solicitante</th>
                                         <th>Titulo</th>
                                         <th>Cantidad</th>
                                         <th>Monto</th>
-                                        <th>Telefono</th>
                                         <th>Nombre de Articulo</th>
-                                        <th>Tipo Articulo</th>
                                         <th>Descripcion</th>
                                         <th>Correo</th>
                                         <th>Acciones:Aprobar/rechazar/GenerarReporte</th>
                                     </tr>
                                 </thead>
-                                        
-                                <tbody *ngFor = 'let solicitud of solicitudes'>
+
+                                <tbody *ngFor='let solicitud of solicitudes'>
                                     <tr>
-                                        <td>{{solicitud.correoElectronico}}</td>
                                         <td>{{solicitud.titulo}}</td>
                                         <td>{{solicitud.cantidad}}</td>
                                         <td>{{solicitud.monto}}</td>
-                                        <td>{{solicitud.telefono}}</td>
                                         <td>{{solicitud.nombreArticulo}}</td>
-                                        <td>{{solicitud.tipoArticulo}}</td>
                                         <td>{{solicitud.descripcion}}</td>
+                                        <td>{{solicitud.correoElectronico}}</td>
                                         <td>
-                                            <button class="btn btn-outline-success" (click) = "aprobarSolic(solicitud)">Aprobar</button>
-                                            <button class="btn btn-outline-danger" (click) = "borrarCompras(solicitud)">Rechazar</button>
+                                            <button class="btn btn-outline-success"
+                                                (click)="aprobarSolic(solicitud)">Aprobar</button>
+                                            <button class="btn btn-outline-danger"
+                                                (click)="borrarCompras(solicitud)">Rechazar</button>
                                         </td>
                                     </tr>
 
