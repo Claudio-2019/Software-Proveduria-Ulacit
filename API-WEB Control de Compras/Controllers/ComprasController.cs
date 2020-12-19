@@ -88,6 +88,7 @@ namespace API_WEB_Control_de_Compras.Controllers
             }
             else {
                 await database.DeleteSolicitudCompra(sol._id);
+                await emailNotify.NotificarRechazoSolicitudJefe(sol.correoElectronico);
                 return Ok("good");
             }
             

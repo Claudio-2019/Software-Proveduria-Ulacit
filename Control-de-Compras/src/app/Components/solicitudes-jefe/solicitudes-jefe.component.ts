@@ -34,7 +34,7 @@ export class SolicitudesJefeComponent implements OnInit {
   borrarCompras(compra: ComprasModel){
     this.comprasAPI.BorrarCompra(compra).subscribe(val=>{
         console.log(val)
-        
+        alert("La solicitud ha sido borrada!! y se le ha notificado al comprador")
     })
   }
 

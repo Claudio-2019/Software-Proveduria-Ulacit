@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using API_WEB_Control_de_Compras.DatabaseContext.AprobacionPorFinanciero;
+using API_WEB_Control_de_Compras.DatabaseContext.CreacionLogin;
 using API_WEB_Control_de_Compras.DatabaseContext.Notificaciones;
 using API_WEB_Control_de_Compras.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -15,6 +18,7 @@ namespace API_WEB_Control_de_Compras.Controllers
         private NotificacionEmail notificacion = new NotificacionEmail();
         
         private IAprobacionPorFinanciero database = new AprobacionPorFinancieroCollection();
+        private ICreacionLogin jefes = new CreacionLoginCollection();
 
         //get todos
         [HttpGet]
@@ -70,19 +74,49 @@ namespace API_WEB_Control_de_Compras.Controllers
         }
 
         //delete para borrar aprobacion
-        [HttpDelete]
-        [Route("api/aprobacionPorFinanciero/DeleteAprobacion/{id}")]
-        public async Task<IActionResult> DeleteAprobacion(string id)
+       
+        [HttpPost]
+        [Route("api/aprobacionPorFinanciero/DeleteAprobacion")]
+        public async Task<IActionResult> DeleteAprobacion([FromBody] SolicitudCompraModel sol)
         {
-            if (id == String.Empty)
+            var usersJefes = jefes.getAllJefes();
+
+            if (sol._id == String.Empty)
             {
                 return NoContent();
 
             }
             else
             {
-                await database.DeleteAprobacionPorFinanciero(id);
+                await database.DeleteAprobacionPorFinanciero(sol._id);
+                await notificacion.NotificarRechazoSolicitudFinanciero(sol.correoElectronico);
+                
+                foreach(var UserJefes in usersJefes.Result.ToList())
+                {
+                    await Task.Run(() =>
+                    {
+
+                        MailMessage notificacion = new MailMessage();
+                        SmtpClient servicioSMTP = new SmtpClient();
+                        notificacion.From = new MailAddress("claudiogh33@gmail.com");
+                        notificacion.To.Add(new MailAddress(UserJefes.correoElectronico));
+                        notificacion.Subject = "SOLICITUD APROBADA";
+                        notificacion.Body = "<h2>SE APROBO UNA SOLICITUD POR EL DEPARTAMENTO FINANCIERO!</h2>";
+                        notificacion.IsBodyHtml = true;
+                        servicioSMTP.Port = 587;
+                        servicioSMTP.Host = "smtp.gmail.com";
+                        servicioSMTP.EnableSsl = true;
+                        servicioSMTP.UseDefaultCredentials = false;
+                        servicioSMTP.Credentials = new NetworkCredential("claudiogh33@gmail.com", "IT.s0p0rt3.MBS1998.");
+                        servicioSMTP.DeliveryMethod = SmtpDeliveryMethod.Network;
+                        servicioSMTP.Send(notificacion);
+
+                    });
+                }
+
+
                 return Ok();
+                
             }
         }
     }
